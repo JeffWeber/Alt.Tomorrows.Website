@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Website (Local Server)",
+            "type": "msedge",
+            "request": "launch",
+            "url": "http://localhost:8000/index.html",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Launch Website (Static File)",
+            "type": "msedge",
+            "request": "launch",
+            "file": "${workspaceFolder}/index.html"
+        }
+    ]
+}

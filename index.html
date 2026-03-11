@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternate Tomorrows — Archive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Special+Elite&family=Lora:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Archive Grid Specific Styles */
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem 0;
+            border-top: 1px solid var(--rule);
+        }
+
+        .archive-card {
+            border: 1px solid var(--rule);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            background: var(--paper-2);
+        }
+
+        .archive-card:hover {
+            border-color: var(--amber-lt);
+            transform: translateY(-2px);
+            background: var(--paper);
+        }
+
+        .archive-card .tl-eyebrow {
+            margin-bottom: 0;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            filter: sepia(25%) brightness(0.82) contrast(1.05);
+            border: 1px solid var(--rule);
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--ink);
+            line-height: 1.2;
+            margin: 0.5rem 0;
+        }
+
+        .card-meta {
+            font-family: 'Special Elite', monospace;
+            font-size: 0.8rem;
+            color: var(--ink-faint);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- ─── GLOBAL HEADER ─── -->
+    <nav class="global-header">
+        <a href="index.html" class="global-logo">Alternate Tomorrows</a>
+        <div class="global-nav">
+            <a href="index.html" class="active">Archive</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <!-- ─── PAGE CONTENT ─── -->
+    <header class="tl-header" style="border-bottom: none; padding-top: 1rem; padding-bottom: 1rem;">
+        <h1 class="tl-title" style="animation-delay: 0s; opacity: 1;">Divergent Timeline Archive</h1>
+        <p class="tl-summary" style="animation-delay: 0s; opacity: 1;">A catalog of observed realities, chronicled for speculative analysis.</p>
+    </header>
+
+    <div class="archive-grid">
+        <!-- Specimen Card 1 -->
+        <a href="timelines/All_the_Bees_Died/timeline.html" class="archive-card">
+            <div class="tl-eyebrow">
+                <span class="tl-badge">Case File</span>
+                <span class="tl-id">ATB-001</span>
+            </div>
+            <!-- Using a placeholder for now until we link the actual timeline -->
+            <div style="width: 100%; height: 180px; background: rgba(196, 152, 88, 0.05); border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; font-family: 'Special Elite'; font-size: 0.75rem; color: var(--ink-faint); letter-spacing: 0.2em;">IMAGE DATA PENDING</div>
+            <div>
+                <h2 class="card-title">All the Bees Died</h2>
+                <div class="card-meta">Divergence: 2031 | Span: 64 YRS</div>
+            </div>
+        </a>
+    </div>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="tl-footer" style="margin-top: 3rem;">
+        <span class="footer-txt">Alternate Tomorrows © <script>document.write(new Date().getFullYear())</script></span>
+        <span class="footer-txt">Total Specimens: 1</span>
+    </footer>
+
+</div>
+
+</body>
+</html>
