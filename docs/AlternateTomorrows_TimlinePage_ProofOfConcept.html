@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alternate Tomorrows — Scientifically Plausible Divergent Futures</title>
+<meta name="description" content="Deeply researched, scientifically plausible timelines of futures that haven't happened yet. What if the bees died? What if the ocean current stopped? Explore the worlds we're one bad decade away from.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #0a0a08;
+    --bg-surface: #111110;
+    --bg-card: #1a1918;
+    --bg-hover: #222120;
+    --amber: #c4923a;
+    --amber-dim: #a07830;
+    --amber-glow: #d4a24a;
+    --text-primary: #e8e4dc;
+    --text-secondary: #aba69c;
+    --text-dim: #7d786e;
+    --text-faint: #4a4640;
+    --border: #2a2825;
+    --border-light: #3a3835;
+    --grain-overlay: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--amber-dim) var(--bg-deep);
+  }
+
+  body {
+    background: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Grain texture overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: var(--grain-overlay);
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.5;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(ellipse, rgba(196, 146, 58, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--amber-dim);
+    border: 1px solid var(--border);
+    padding: 0.5em 1.5em;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.4s forwards;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--amber);
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.6s forwards;
+  }
+
+  .hero-scroll {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    position: absolute;
+    bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 1s forwards;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--text-dim), transparent);
+    margin: 1rem auto 0;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  /* ─── INTRO SECTION ─── */
+  .intro {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 8rem 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .intro-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--amber-dim);
+    margin-bottom: 2rem;
+  }
+
+  .intro p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+  }
+
+  .intro p:first-of-type {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+  }
+
+  /* ─── TIMELINE ENTRY ─── */
+  .timeline-header {
+    text-align: center;
+    padding: 10rem 2rem 4rem;
+    position: relative;
+  }
+
+  .timeline-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--amber-dim));
+  }
+
+  .timeline-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--amber-dim);
+    margin-bottom: 1.5rem;
+  }
+
+  .timeline-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .timeline-span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    letter-spacing: 0.15em;
+  }
+
+  /* ─── SUMMARY BLOCK ─── */
+  .summary {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .summary-text {
+    font-size: 1.15rem;
+    line-height: 1.85;
+    color: var(--text-secondary);
+    font-style: italic;
+    border-left: 2px solid var(--amber-dim);
+    padding-left: 2rem;
+  }
+
+  /* ─── ERA SECTIONS ─── */
+  .era {
+    border-top: 1px solid var(--border);
+    padding: 6rem 2rem;
+    max-width: 780px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .era.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .era-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--bg-deep);
+    background: var(--amber-dim);
+    display: inline-block;
+    padding: 0.35em 1em;
+    margin-bottom: 1.5rem;
+  }
+
+  .era-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .era-years {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--amber-dim);
+    letter-spacing: 0.15em;
+    margin-bottom: 2.5rem;
+  }
+
+  .era-body p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1.02rem;
+  }
+
+  .era-body p:first-child::first-letter {
+    font-family: 'Instrument Serif', serif;
+    font-size: 3.2rem;
+    float: left;
+    line-height: 0.85;
+    margin-right: 0.1em;
+    margin-top: 0.1em;
+    color: var(--amber);
+  }
+
+  /* ─── EVENTS ─── */
+  .events {
+    margin: 3rem 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .event {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1.5rem;
+    align-items: baseline;
+  }
+
+  .event:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .event-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--amber);
+    letter-spacing: 0.05em;
+    padding-top: 0.15em;
+  }
+
+  .event-title {
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .event-desc {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ─── SENSORY PROFILE ─── */
+  .sensory {
+    border-top: 1px solid var(--border);
+    padding: 6rem 2rem;
+    max-width: 780px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .sensory.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .sensory-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .sensory-subtitle {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-bottom: 3rem;
+    font-style: italic;
+  }
+
+  .sense-block {
+    margin-bottom: 3rem;
+  }
+
+  .sense-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .sense-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .sense-block p {
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.8;
+  }
+
+  /* ─── LEXICON ─── */
+  .lexicon {
+    border-top: 1px solid var(--border);
+    padding: 6rem 2rem;
+    max-width: 780px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .lexicon.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .lexicon-header {
+    margin-bottom: 3rem;
+  }
+
+  .lexicon-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .lexicon-subtitle {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+
+  .lex-entry {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .lex-entry:first-of-type {
+    border-top: 1px solid var(--border);
+  }
+
+  .lex-term {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.4rem;
+    color: var(--amber-glow);
+    margin-bottom: 0.6rem;
+  }
+
+  .lex-def {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 0.8rem;
+  }
+
+  .lex-charge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+  }
+
+  .lex-charge span {
+    color: var(--amber-dim);
+  }
+
+  /* ─── RULES ─── */
+  .rules-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+  }
+
+  .rules-list li {
+    padding: 0.8rem 0 0.8rem 1.5rem;
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .rules-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--amber-dim);
+  }
+
+  /* ─── SIGNUP / FOOTER ─── */
+  .signup {
+    border-top: 1px solid var(--border);
+    padding: 8rem 2rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .signup::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(196, 146, 58, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .signup-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--amber-dim);
+    margin-bottom: 2rem;
+  }
+
+  .signup h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .signup p {
+    color: var(--text-secondary);
+    max-width: 440px;
+    margin: 0 auto 2.5rem;
+    font-size: 1rem;
+  }
+
+  .signup-form {
+    display: flex;
+    gap: 0;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .signup-form input[type="email"] {
+    flex: 1;
+    padding: 0.9rem 1.2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-right: none;
+    color: var(--text-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .signup-form input[type="email"]::placeholder {
+    color: var(--text-dim);
+  }
+
+  .signup-form input[type="email"]:focus {
+    border-color: var(--amber-dim);
+  }
+
+  .signup-form button {
+    padding: 0.9rem 2rem;
+    background: var(--amber-dim);
+    border: 1px solid var(--amber-dim);
+    color: var(--bg-deep);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+  }
+
+  .signup-form button:hover {
+    background: var(--amber);
+    border-color: var(--amber);
+  }
+
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .footer-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  .footer-text a {
+    color: var(--amber-dim);
+    text-decoration: none;
+  }
+
+  /* ─── DAY IN THE LIFE ─── */
+  .daily {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    margin: 3rem 0;
+  }
+
+  .daily-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.2rem;
+  }
+
+  .daily p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  /* ─── UPCOMING TIMELINES ─── */
+  .upcoming {
+    border-top: 1px solid var(--border);
+    padding: 6rem 2rem;
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .upcoming-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--amber-dim);
+    margin-bottom: 2rem;
+  }
+
+  .upcoming h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+  }
+
+  .upcoming-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .upcoming-card {
+    background: var(--bg-surface);
+    padding: 2rem 1.5rem;
+    text-align: left;
+    transition: background 0.3s;
+  }
+
+  .upcoming-card:hover {
+    background: var(--bg-hover);
+  }
+
+  .upcoming-card .card-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 0.8rem;
+  }
+
+  .upcoming-card .card-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .upcoming-card .card-desc {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .era, .sensory, .lexicon { padding: 4rem 1.5rem; }
+    .event { grid-template-columns: 1fr; gap: 0.3rem; }
+    .signup-form { flex-direction: column; }
+    .signup-form input[type="email"] { border-right: 1px solid var(--border-light); border-bottom: none; }
+    .daily { padding: 1.5rem; }
+    .summary-text { padding-left: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="hero-badge">Scientifically Plausible Divergent Futures</div>
+  <h1 class="hero-title">Alternate<br><em>Tomorrows</em></h1>
+  <p class="hero-subtitle">Deeply researched timelines of futures that haven't happened yet — built on real science, real systems, and the compound failures that connect them.</p>
+  <div class="hero-scroll">Begin reading</div>
+</section>
+
+<!-- ═══════ INTRO ═══════ -->
+<section class="intro">
+  <div class="intro-label">What is a Divergent Timeline?</div>
+  <p>A single point of failure. A pathogen mutates. A current shifts. A crop collapses. Then the second-order consequences begin — the ones nobody modeled — and the world restructures itself around what's left.</p>
+  <p>Each timeline on this site traces one scientifically plausible divergence from the present day through decades of cascading consequence, arriving at a future that is not dystopia and not utopia — just a different normal, built on the rubble of a specific loss.</p>
+  <p>These are not predictions. They are stress tests. They ask: if this one thing broke, what would the world we built on the other side actually feel like?</p>
+</section>
+
+<!-- ═══════ TIMELINE 01 ═══════ -->
+<section class="timeline-header">
+  <div class="timeline-number">Timeline 01</div>
+  <h2 class="timeline-name">All the Bees Died</h2>
+  <div class="timeline-span">2031 — 2095</div>
+</section>
+
+<section class="summary">
+  <p class="summary-text">In 2031, a compound pathogen event collapses 94% of the world's honeybee colonies within a single agricultural season. Over the following decades, humanity passes through two structural crises: the desperate agricultural reorganization, and the slow-motion ecological unraveling that follows. By 2095, the world is fed but not nourished — alive inside a functioning food machine that is quietly running out of water.</p>
+</section>
+
+<!-- ═══════ INCITING ERA ═══════ -->
+<section class="era" data-reveal>
+  <div class="era-badge">Inciting Era</div>
+  <h3 class="era-title">The Year the Flavor Left</h3>
+  <div class="era-years">2031 — 2038</div>
+  <div class="era-body">
+    <p>The collapse begins in the spring planting season of 2031 and happens faster than any model predicted. A third consecutive winter of record-low temperatures across North America and Europe, combined with decades of accumulated neonicotinoid systemic loading in agricultural soils, overloads the immune systems of honeybee colonies already weakened by the Varroa mite and Deformed Wing Virus complex. Into that opening emerges a novel variant of <em>Nosema ceranae</em> — a microsporidian gut parasite — engineered by accident through evolutionary pressure into a form with enhanced cross-species transmissibility.</p>
+    <p>It spreads from managed <em>Apis mellifera</em> colonies into bumblebee populations and solitary bee species through shared floral resources, simultaneously amplified by a resurgence of Israeli Acute Paralysis Virus. Neither emergency treatment nor colony management practice can interrupt the cascade. By September 2031, 94% of monitored honeybee and bumblebee colonies worldwide are gone.</p>
+    <p>Pollination-dependent crops — almonds, apples, cherries, avocados, blueberries, most melons, canola, sunflowers, and over seventy vegetable species — drop 65–80% in the 2031 harvest. At roughly $577 billion in annual agricultural value destroyed in a single year, global commodity markets suspend normal trading within weeks. Emergency governments pivot to manual pollination while self-pollinating staples hold. Calories survive. Everything else does not.</p>
+  </div>
+
+  <ul class="events">
+    <li class="event">
+      <span class="event-year">2031</span>
+      <div>
+        <div class="event-title">The Silent Spring Harvest</div>
+        <div class="event-desc">Global almond, apple, and avocado crops fail at 78–84% below typical yield. Commodity prices for affected foods increase 400–900% in six months. Food riots in fourteen cities.</div>
+      </div>
+    </li>
+    <li class="event">
+      <span class="event-year">2032</span>
+      <div>
+        <div class="event-title">UN Emergency Pollination Protocol</div>
+        <div class="event-desc">Mandatory reporting for surviving pollinator populations established. $2.4 trillion pledged in emergency agricultural restructuring funds.</div>
+      </div>
+    </li>
+    <li class="event">
+      <span class="event-year">2033</span>
+      <div>
+        <div class="event-title">The Canola Conversion</div>
+        <div class="event-desc">European Union formally ends canola as a commodity crop, mandating a switch to self-pollinating soybean and wind-pollinated alternatives.</div>
+      </div>
+    </li>
+    <li class="event">
+      <span class="event-year">2035</span>
+      <div>
+        <div class="event-title">First Commercial Drone Pollination Network</div>
+        <div class="event-desc">Japan's AeroHana consortium deploys the first operational robotic pollination grid across 1,800 hectares of sealed greenhouse production.</div>
+      </div>
+    </li>
+    <li class="event">
+      <span class="event-year">2036</span>
+      <div>
+        <div class="event-title">Wild Bee Rescue Stations Close</div>
+        <div class="event-desc">Every isolated rescue colony fails to establish a viable breeding population. All remaining funding redirected to drone technology.</div>
+      </div>
+    </li>
+  </ul>
+
+  <ul class="rules-list">
+    <li>Calories from grain are abundant; micronutrients and flavor diversity are structurally unavailable at scale.</li>
+    <li>Robotic pollination works only inside sealed enclosures; open-field deployment is impossible at the required scale.</li>
+    <li>Any agriculture outside the greenhouse envelope must pivot to self-pollinating monoculture or face permanent failure.</li>
+    <li>National food security protocols override free trade; grain export bans become standard policy within 18 months.</li>
+    <li>Wild ecosystems receive no intervention — every available resource is redirected toward agricultural stabilization.</li>
+  </ul>
+</section>
+
+<!-- ═══════ THE GREAT THINNING ═══════ -->
+<section class="era" data-reveal>
+  <div class="era-badge">The Long Consequence</div>
+  <h3 class="era-title">The Great Thinning</h3>
+  <div class="era-years">2038 — 2062</div>
+  <div class="era-body">
+    <p>The Great Thinning is the crisis that happened while the cameras were pointed elsewhere. Approximately 35% of all wild plant species in temperate and subtropical biomes are obligate bee-pollinators with no viable alternative. Beginning in 2038, these plants stop reproducing. Ground-cover species vanish from the regeneration layer first. Flowering shrubs follow. Mid-canopy trees stop producing seedlings. Old-growth trees continue to stand — they don't need to reproduce each year — and so from the air, the forests look intact. Satellite imagery shows canopy. What satellite imagery does not show is the hollow beneath.</p>
+    <p>The ecological cascade is not subtle once it begins. Deer, elk, moose, and other megaherbivores that depended on the lost flowering understory migrate toward agricultural zones. Predators follow. By 2055, habitat compression drives cascading extinctions across species that depended on flowering plants for food or cover. Between 2050 and 2058, European and North American songbird populations lose 68% of the species that fed on insects associated with the flowering understory. The silence that began in the beehives has spread to the forest.</p>
+  </div>
+
+  <ul class="events">
+    <li class="event">
+      <span class="event-year">2039</span>
+      <div>
+        <div class="event-title">The Undergrowth Report</div>
+        <div class="event-desc">Joint study confirms 34% of monitored wild plant species have missed two consecutive reproductive cycles. Receives less media attention than the almond price index.</div>
+      </div>
+    </li>
+    <li class="event">
+      <span class="event-year">2044</span>
+      <div>
+        <div class="event-title">Amazon Margin Dieback Event</div>
+        <div class="event-desc">A 2.3-million-hectare zone along the southern Amazon-Cerrado transition fails to generate forest regeneration for the first time in recorded history.</div>
+      </div>
+    </li>
+    <li class="event">
+      <span class="event-year">2051</span>
+      <div>
+        <div class="event-title">European Megafauna Zones Established</div>
+        <div class="event-desc">France, Germany, and Czechia create jointly administered buffer zones to contain wild ungulate migrations, consuming 11% of total arable land.</div>
+      </div>
+    </li>
+    <li class="event">
+      <span class="event-year">2058</span>
+      <div>
+        <div class="event-title">The Last Song Year</div>
+        <div class="event-desc">UK census shows zero net breeding pairs for 14 songbird species across the British Isles. The phrase enters the cultural vocabulary and never fully leaves it.</div>
+      </div>
+    </li>
+    <li class="event">
+      <span class="event-year">2060</span>
+      <div>
+        <div class="event-title">Global Forest Biomass Alert</div>
+        <div class="event-desc">Terrestrial forest and grassland biomass drops 28% below 2030 baselines in affected zones. Boreal forests become the most biologically dense biome on Earth.</div>
+      </div>
+    </li>
+  </ul>
+
+  <ul class="rules-list">
+    <li>Forest health is now measured by regeneration rate, not canopy cover; the canopy still looks normal from orbit while the ecosystem hollows out beneath it.</li>
+    <li>Wildlife that was formerly managed by habitat boundary no longer has a boundary; human agriculture and wildland compress into a single contested zone.</li>
+    <li>Reduced root systems decrease soil water infiltration by 30% in key catchment zones, producing more surface runoff and less groundwater recharge.</li>
+    <li>The loss of terrestrial plant biomass removes approximately 1.1 billion tons of annual carbon absorption from the global budget by 2050.</li>
+  </ul>
+</section>
+
+<!-- ═══════ PRESENT ERA ═══════ -->
+<section class="era" data-reveal>
+  <div class="era-badge">Present Era</div>
+  <h3 class="era-title">The Grain World</h3>
+  <div class="era-years">2095</div>
+  <div class="era-body">
+    <p>The defining tension of the Grain World is a civilization running on a single track: a food machine that works, sitting inside a biosphere that is structurally failing the machine. The caloric supply keeps 6.1 billion people alive. The greenhouse-drone CAE networks that produce the only remaining dietary variety require uninterrupted power, precision water delivery, and airtight contamination control. That water comes from watersheds fed by forests that are 40% thinner than they were 60 years ago and getting thinner still.</p>
+    <p>The system is functional. There is no margin. The Grain World is not a collapse scenario — it is an optimization scenario with a slow leak no one has figured out how to stop.</p>
+    <p>The primary scarcity is not calories — it is flavor. Wheat, maize, rice, sorghum, and self-pollinating legumes form the base diet and are cheap and abundant. What is expensive is anything that required a pollinator: tomatoes, strawberries, cucumbers, and limited orchard fruits produced inside drone-managed CAE complexes. The social dividing line is strikingly specific: a family with access to greenhouse produce eats a diet recognizable to anyone alive in 2025. A family below that threshold eats grain, legume, and supplement tablets.</p>
+    <p>The supplement pharmaceutical sector is the second-largest industry on Earth, after drone manufacturing.</p>
+  </div>
+
+  <div class="daily">
+    <div class="daily-label">A Day in the Life — Dutch Agricultural Corridor, 2095</div>
+    <p>An average mid-income resident wakes in a grid-heated apartment. Breakfast is oatmeal, a soy protein drink, and two supplement capsules — one folate complex, one carotenoid-polyphenol blend. They travel by electric tram to a CAE support operation: drone maintenance, yield monitoring, or logistics coordination. Lunch is a grain bowl with legume protein. A greenhouse-grown tomato or cucumber wedge is included once or twice per week at subsidized cost — this is not taken for granted. Dinner repeats the morning rhythm: grain, legume, supplement. Fish protein appears two to three times a week. Summer months bring water rationing notices to the tram displays. No one finds the notices alarming. They are part of the calendar.</p>
+  </div>
+
+  <ul class="rules-list">
+    <li>Grid power for greenhouse-drone networks is the top national energy priority. Urban residential areas receive electricity on tiered rationing schedules.</li>
+    <li>The dominant governing model is technocratic resource management. Governments are measured primarily on their PIC compliance scores and food security indices.</li>
+    <li>Access to greenhouse produce is the clearest social dividing line. The 70% below the allocation threshold are not starving — their health outcomes are measurably worse, and they know it.</li>
+    <li>Wasting grain in any form is a social taboo enforced by both law and peer behavior. Eating a fresh strawberry without offering to share is considered openly antisocial.</li>
+    <li>The concept of "forest smell" exists only in archival recordings and in the memories of people over seventy.</li>
+  </ul>
+</section>
+
+<!-- ═══════ SENSORY PROFILE ═══════ -->
+<section class="sensory" data-reveal>
+  <h3 class="sensory-title">Sensory Profile</h3>
+  <p class="sensory-subtitle">What the Grain World feels like from inside it.</p>
+
+  <div class="sense-block">
+    <div class="sense-label">Acoustic</div>
+    <p>The outdoor soundscape is defined by electric tram motors, mid-frequency wind across open grain fields, and the constant low hum of HVAC exhaust from CAE perimeters. There is no insect ambient sound. There is no songbird ambient sound in urban or agricultural zones. At close range around CAE perimeter zones, drone navigation systems emit a 9–12 kHz operational frequency — a thin, high-pitched electronic tone that is now the sonic signature of food production. The sound that tells you the food machine is running.</p>
+  </div>
+
+  <div class="sense-block">
+    <div class="sense-label">Optical</div>
+    <p>Horizon views divide between two lines: the grey-silver polycarbonate roof panels of CAE installations, flat and low and reflecting light, and the skeletal mid-canopy of thinned deciduous forest — trees still present but with visible gaps in the shrub layer, the understory sparse enough to see through to the soil in autumn. No flowering color appears within visual range of the working landscape. The sky, however, is cleaner than it was in 2025. Sunsets carry a clarity that pre-divergence residents would have described as extraordinary. In the Grain World it is simply what the sky looks like.</p>
+  </div>
+
+  <div class="sense-block">
+    <div class="sense-label">Atmospheric</div>
+    <p>The dominant outdoor scent is processed grain — the bran and hull dust generated by transport and combine operations, a dry, starchy, almost floury quality that settles on surfaces. The notable absence is botanical sweetness. The terpene-heavy scent signature of flowering plants — the layered smell of a forest in bloom, of an orchard in season, of a wildflower meadow in July — is gone from the outdoor air. Urban interiors carry a faint ozone tang from UV-C sterilization systems used in supplement manufacturing.</p>
+  </div>
+
+  <div class="sense-block">
+    <div class="sense-label">Tactile / Thermal</div>
+    <p>Annual temperature sits 2.1°C above the 2025 baseline. Humidity runs lower — thinned understory means forests release less moisture, extending dry periods and making summers feel drier and sharper than they should. Inside the CAE installations, temperature is held at 18–24°C year-round. Polycarbonate panels retain heat longer than any previous building material, and the specific sensation of a warm greenhouse skin on a cool autumn morning has become a texture associated with safety — with the reassurance that the food machine is still running.</p>
+  </div>
+</section>
+
+<!-- ═══════ LEXICON ═══════ -->
+<section class="lexicon" data-reveal>
+  <div class="lexicon-header">
+    <h3 class="lexicon-title">Lexicon</h3>
+    <p class="lexicon-subtitle">The language of a world that replaced what it lost with what it could build.</p>
+  </div>
+
+  <div class="lex-entry">
+    <div class="lex-term">The Last Song Year</div>
+    <div class="lex-def">A cultural reference point equivalent to a generational trauma marker. Used to anchor a moment in time — "that was before the Last Song Year" — and to evoke the understanding that something irreversible was confirmed, not caused, in 2058. The phrase emerged from a UK ecological census report; it entered common speech because it described an experience people already knew existed but had not named.</div>
+    <div class="lex-charge">Emotional charge — <span>Grief, specifically the quiet kind</span></div>
+  </div>
+
+  <div class="lex-entry">
+    <div class="lex-term">CAE (Controlled Agricultural Environment)</div>
+    <div class="lex-def">A sealed greenhouse complex where AI-managed drone fleets pollinate crops year-round. Residents near CAE installations refer to them simply as "the grid" or "the grow." Workers in CAE support operations carry real status. Protesters who object to the monoculture they represent are a small, mostly aging demographic.</div>
+    <div class="lex-charge">Emotional charge — <span>Neutral to proud</span></div>
+  </div>
+
+  <div class="lex-entry">
+    <div class="lex-term">Allotment Day</div>
+    <div class="lex-def">The weekly distribution of greenhouse produce to allocation card holders. Mid-income households plan significant social activity around it — which items arrived, whether there was fruit, what can be traded with neighbors. Receiving a fruit allocation is a social occasion.</div>
+    <div class="lex-charge">Emotional charge — <span>Anticipatory, occasionally festive</span></div>
+  </div>
+
+  <div class="lex-entry">
+    <div class="lex-term">WIM Score</div>
+    <div class="lex-def">The quarterly Watershed Integrity Monitor rating for a given river catchment zone. A number between 0 and 100 where a declining score means the region's groundwater supply is degrading. People read WIM scores the way previous generations read unemployment figures — with resignation and the specific hope that the number won't be theirs this quarter.</div>
+    <div class="lex-charge">Emotional charge — <span>Dread, carefully managed</span></div>
+  </div>
+
+  <div class="lex-entry">
+    <div class="lex-term">Ecological Suspension</div>
+    <div class="lex-def">The formal classification for a geographic region where ecosystem regeneration has ceased. Not dead — old-growth canopy may persist for decades — but no longer self-renewing. The word "suspension" was chosen over "collapse" deliberately to avoid political panic, and the euphemism stuck.</div>
+    <div class="lex-charge">Emotional charge — <span>Irony and grief in roughly equal measure</span></div>
+  </div>
+
+  <div class="lex-entry">
+    <div class="lex-term">The Supplement Shelf</div>
+    <div class="lex-def">The pharmaceutical micronutrient section of any retail pharmacy — the largest section by floor space. Also used metaphorically: "running on the supplement shelf" means getting by, maintaining function without richness. Nobody loves the supplement shelf. It is the Grain World's most honest symbol.</div>
+    <div class="lex-charge">Emotional charge — <span>Resigned practicality, occasionally dark humor</span></div>
+  </div>
+</section>
+
+<!-- ═══════ UPCOMING ═══════ -->
+<section class="upcoming">
+  <div class="upcoming-label">More Timelines</div>
+  <h2>Other futures are in development.</h2>
+  <div class="upcoming-grid">
+    <div class="upcoming-card">
+      <div class="card-status">Timeline 02 — Coming Soon</div>
+      <div class="card-title">[ Classified ]</div>
+      <div class="card-desc">A different system breaks. A different world gets built on the other side.</div>
+    </div>
+    <div class="upcoming-card">
+      <div class="card-status">Timeline 03 — In Research</div>
+      <div class="card-title">[ Classified ]</div>
+      <div class="card-desc">The science is being verified. The consequences are being traced.</div>
+    </div>
+    <div class="upcoming-card">
+      <div class="card-status">The Process</div>
+      <div class="card-title">How These Are Made</div>
+      <div class="card-desc">Deep research. AI collaboration. Scientific plausibility as the only constraint.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SIGNUP ═══════ -->
+<section class="signup">
+  <div class="signup-eyebrow">Stay Informed</div>
+  <h2>New timelines are coming.</h2>
+  <p>Enter your email to be notified when the next divergent future is published.</p>
+  <div class="signup-form">
+    <input type="email" placeholder="your@email.com" aria-label="Email address">
+    <button type="button">Notify Me</button>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+  <div class="footer-text"><a href="#">Alternate Tomorrows</a> — Scientifically Plausible Divergent Futures</div>
+</footer>
+
+<script>
+  // Scroll-triggered reveal
+  const reveals = document.querySelectorAll('[data-reveal]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

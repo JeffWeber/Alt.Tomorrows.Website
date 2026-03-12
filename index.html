@@ -1,110 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alternate Tomorrows — Archive</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Special+Elite&family=Lora:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Archive Grid Specific Styles */
-        .archive-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 3rem 0;
-            border-top: 1px solid var(--rule);
-        }
-
-        .archive-card {
-            border: 1px solid var(--rule);
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-            background: var(--paper-2);
-        }
-
-        .archive-card:hover {
-            border-color: var(--amber-lt);
-            transform: translateY(-2px);
-            background: var(--paper);
-        }
-
-        .archive-card .tl-eyebrow {
-            margin-bottom: 0;
-        }
-
-        .card-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            filter: sepia(25%) brightness(0.82) contrast(1.05);
-            border: 1px solid var(--rule);
-        }
-
-        .card-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--ink);
-            line-height: 1.2;
-            margin: 0.5rem 0;
-        }
-
-        .card-meta {
-            font-family: 'Special Elite', monospace;
-            font-size: 0.8rem;
-            color: var(--ink-faint);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alternate Tomorrows — Scientifically Plausible Divergent Futures</title>
+<meta name="description" content="Deeply researched, scientifically plausible timelines of futures that haven't happened yet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/global.css">
+<script src="assets/js/main.js" defer></script>
 </head>
 <body>
 
-<div class="page">
+<!-- ═══════ NAV ═══════ -->
+<nav>
+  <a href="index.html" class="nav-logo">Alternate <em>Tomorrows</em></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Timelines</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Process</a></li>
+  </ul>
+</nav>
 
-    <!-- ─── GLOBAL HEADER ─── -->
-    <nav class="global-header">
-        <a href="index.html" class="global-logo">Alternate Tomorrows</a>
-        <div class="global-nav">
-            <a href="index.html" class="active">Archive</a>
-            <a href="about.html">About</a>
-        </div>
-    </nav>
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <h1 class="hero-title">Alternate <em>Tomorrows</em></h1>
+  <p class="hero-sub">Scientifically plausible divergent futures. One system breaks. The world rebuilds around what's left. These are the timelines of what comes after.</p>
+</section>
 
-    <!-- ─── PAGE CONTENT ─── -->
-    <header class="tl-header" style="border-bottom: none; padding-top: 1rem; padding-bottom: 1rem;">
-        <h1 class="tl-title" style="animation-delay: 0s; opacity: 1;">Divergent Timeline Archive</h1>
-        <p class="tl-summary" style="animation-delay: 0s; opacity: 1;">A catalog of observed realities, chronicled for speculative analysis.</p>
-    </header>
+<!-- ═══════ TIMELINES ═══════ -->
+<section class="timelines-section">
+  <div class="section-label">Divergent Timelines</div>
 
-    <div class="archive-grid">
-        <!-- Specimen Card 1 -->
-        <a href="timelines/All_the_Bees_Died/timeline.html" class="archive-card">
-            <div class="tl-eyebrow">
-                <span class="tl-badge">Case File</span>
-                <span class="tl-id">ATB-001</span>
-            </div>
-            <!-- Using a placeholder for now until we link the actual timeline -->
-            <div style="width: 100%; height: 180px; background: rgba(196, 152, 88, 0.05); border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; font-family: 'Special Elite'; font-size: 0.75rem; color: var(--ink-faint); letter-spacing: 0.2em;">IMAGE DATA PENDING</div>
-            <div>
-                <h2 class="card-title">All the Bees Died</h2>
-                <div class="card-meta">Divergence: 2031 | Span: 64 YRS</div>
-            </div>
-        </a>
-    </div>
+  <div class="timeline-grid">
 
-    <!-- ─── FOOTER ─── -->
-    <footer class="tl-footer" style="margin-top: 3rem;">
-        <span class="footer-txt">Alternate Tomorrows © <script>document.write(new Date().getFullYear())</script></span>
-        <span class="footer-txt">Total Specimens: 1</span>
-    </footer>
+    <a href="timeline-01.html" class="timeline-card accent-amber">
+      <div class="color-bar"></div>
+      <div class="card-content">
+        <div class="card-number">Timeline 01</div>
+        <div class="card-title">All the Bees Died</div>
+        <div class="card-span">2031 — 2095</div>
+        <p class="card-desc">A compound pathogen event collapses 94% of the world's bee colonies in a single season. Humanity rebuilds its food system inside sealed greenhouses — and watches the forests hollow out beneath a canopy that still looks intact from orbit.</p>
+      </div>
+      <span class="card-status status-live">Read</span>
+    </a>
 
-</div>
+    <a href="#" class="timeline-card accent-slate">
+      <div class="color-bar"></div>
+      <div class="card-content">
+        <div class="card-number">Timeline 02</div>
+        <div class="card-title">The Current Stopped</div>
+        <div class="card-span">2029 — 2088</div>
+        <p class="card-desc">The Atlantic Meridional Overturning Circulation collapses. Northern Europe loses its thermal subsidy. The consequences rewrite agriculture, migration, and the political map of the Northern Hemisphere.</p>
+      </div>
+      <span class="card-status status-soon">Coming Soon</span>
+    </a>
+
+    <a href="#" class="timeline-card accent-moss">
+      <div class="color-bar"></div>
+      <div class="card-content">
+        <div class="card-number">Timeline 03</div>
+        <div class="card-title">The Soil Went Quiet</div>
+        <div class="card-span">2033 — 2101</div>
+        <p class="card-desc">Industrial monoculture crosses a threshold. Topsoil microbiology collapses across the breadbasket regions. The ground that fed the world stops cooperating.</p>
+      </div>
+      <span class="card-status status-research">In Research</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ═══════ ABOUT BLOCK ═══════ -->
+<section class="about-block" data-reveal>
+  <h2>What is a Divergent Timeline?</h2>
+  <p>A single point of failure. A pathogen mutates. A current shifts. A crop collapses. Then the second-order consequences begin — the ones nobody modeled — and the world restructures itself around what's left.</p>
+  <p>Each timeline traces one scientifically plausible divergence through decades of cascading consequence, arriving at a future that is not dystopia and not utopia — just a different normal, built on the rubble of a specific loss.</p>
+</section>
+
+<!-- ═══════ SIGNUP ═══════ -->
+<section class="signup" data-reveal>
+  <div class="signup-label">Stay Informed</div>
+  <h2>New timelines are coming.</h2>
+  <p>Get notified when the next divergent future is published.</p>
+  <div class="signup-form">
+    <input type="email" placeholder="your@email.com" aria-label="Email address">
+    <button type="button">Notify Me</button>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="footer-brand">Alternate Tomorrows</div>
+  <ul class="footer-links">
+    <li><a href="index.html">Timelines</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Process</a></li>
+  </ul>
+</footer>
 
 </body>
 </html>
