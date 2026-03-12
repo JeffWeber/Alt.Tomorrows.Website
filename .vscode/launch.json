@@ -2,17 +2,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Website (Local Server)",
-            "type": "msedge",
+            "name": "Launch Website",
+            "type": "chrome",
             "request": "launch",
-            "url": "http://localhost:8000/index.html",
+            "file": "${workspaceFolder}/index.html",
             "webRoot": "${workspaceFolder}"
         },
         {
-            "name": "Launch Website (Static File)",
-            "type": "msedge",
+            "name": "Launch Website (Local Server)",
+            "type": "chrome",
             "request": "launch",
-            "file": "${workspaceFolder}/index.html"
+            "url": "http://localhost:8000/index.html",
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }

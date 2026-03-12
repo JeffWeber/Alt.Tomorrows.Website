@@ -794,6 +794,45 @@ footer {
   font-style: italic;
 }
 
+/* ─── TRANSITION VECTOR ─── */
+.transition-vector {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 0 2rem 6rem;
+  text-align: center;
+}
+
+.transition-vector::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent-dim);
+  margin: 0 auto 2.5rem;
+  opacity: 0.5;
+}
+
+.transition-vector p {
+  font-style: italic;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+/* ─── LABELED BLOCK (prose variant of .daily, non-italic) ─── */
+.labeled-block {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  margin: 2rem 0;
+}
+
+.labeled-block p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
 /* ─── TIMELINE RESPONSIVE ─── */
 @media (max-width: 640px) {
   .era, .sensory, .lexicon { padding: 4rem 1.5rem; }
