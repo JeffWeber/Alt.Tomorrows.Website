@@ -10,6 +10,11 @@
   --border: #252320;
   --neutral: #636058;
   --grain-overlay: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+
+  /* Default generic accents (can fall back to text-dim if no accent class is applied) */
+  --accent: var(--text-secondary);
+  --accent-dim: var(--text-dim);
+  --accent-glow: var(--text-primary);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -243,14 +248,29 @@ nav {
 }
 
 /* ─── Accent Colors per Timeline ─── */
-.accent-amber .color-bar { background: #c4923a; }
-.accent-amber .card-span { color: #a07830; }
+.accent-amber {
+  --accent: #c4923a;
+  --accent-dim: #a07830;
+  --accent-glow: #d4a24a;
+}
+.accent-amber .color-bar { background: var(--accent); }
+.accent-amber .card-span { color: var(--accent-dim); }
 
-.accent-slate .color-bar { background: #6a8fa8; }
-.accent-slate .card-span { color: #6a8fa8; }
+.accent-slate {
+  --accent: #6a8fa8;
+  --accent-dim: #4a6b83; /* TBD dim, using a darker slate for now */
+  --accent-glow: #8cb5d1; /* TBD glow, using lighter slate */
+}
+.accent-slate .color-bar { background: var(--accent); }
+.accent-slate .card-span { color: var(--accent-dim); }
 
-.accent-moss .color-bar { background: #7a9a6e; }
-.accent-moss .card-span { color: #7a9a6e; }
+.accent-moss {
+  --accent: #7a9a6e;
+  --accent-dim: #5c7851; /* TBD dim, using a darker moss */
+  --accent-glow: #9bc08e; /* TBD glow, using a lighter moss */
+}
+.accent-moss .color-bar { background: var(--accent); }
+.accent-moss .card-span { color: var(--accent-dim); }
 
 /* ─── WHAT IS THIS ─── */
 .about-block {
@@ -433,4 +453,351 @@ footer {
     padding: 2rem 1.5rem;
     text-align: center;
   }
+}
+
+/* ═══════════════════════════════════ */
+/* ─── TIMELINE SPECIFIC ENTRIES ─── */
+/* ═══════════════════════════════════ */
+
+/* ─── TIMELINE HEADER ─── */
+.timeline-header {
+  text-align: center;
+  padding: 10rem 2rem 4rem;
+  position: relative;
+}
+
+.timeline-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, var(--neutral));
+}
+
+.timeline-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-dim);
+  margin-bottom: 1.5rem;
+}
+
+.timeline-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.timeline-span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--accent-dim);
+  letter-spacing: 0.15em;
+}
+
+/* ─── SUMMARY BLOCK ─── */
+.summary {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+}
+
+.summary-text {
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  font-style: italic;
+  border-left: 2px solid var(--accent-dim);
+  padding-left: 2rem;
+}
+
+/* ─── ERA SECTIONS ─── */
+.era {
+  border-top: 1px solid var(--border);
+  padding: 6rem 2rem;
+  max-width: 780px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.era.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.era-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--bg-deep);
+  background: var(--accent-dim);
+  display: inline-block;
+  padding: 0.35em 1em;
+  margin-bottom: 1.5rem;
+}
+
+.era-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.era-years {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent-dim);
+  letter-spacing: 0.15em;
+  margin-bottom: 2.5rem;
+}
+
+.era-body p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 1.02rem;
+}
+
+.era-body p:first-child::first-letter {
+  font-family: 'Instrument Serif', serif;
+  font-size: 3.2rem;
+  float: left;
+  line-height: 0.85;
+  margin-right: 0.1em;
+  margin-top: 0.1em;
+  color: var(--accent);
+}
+
+/* ─── EVENTS ─── */
+.events {
+  margin: 3rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.event {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.5rem;
+  align-items: baseline;
+}
+
+.event:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.event-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  padding-top: 0.15em;
+}
+
+.event-title {
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.event-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ─── SENSORY PROFILE ─── */
+.sensory {
+  border-top: 1px solid var(--border);
+  padding: 6rem 2rem;
+  max-width: 780px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.sensory.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sensory-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.sensory-subtitle {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+.sense-block {
+  margin-bottom: 3rem;
+}
+
+.sense-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sense-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.sense-block p {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+/* ─── LEXICON ─── */
+.lexicon {
+  border-top: 1px solid var(--border);
+  padding: 6rem 2rem;
+  max-width: 780px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.lexicon.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lexicon-header {
+  margin-bottom: 3rem;
+}
+
+.lexicon-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.lexicon-subtitle {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.lex-entry {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.lex-entry:first-of-type {
+  border-top: 1px solid var(--border);
+}
+
+.lex-term {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.4rem;
+  color: var(--accent-glow);
+  margin-bottom: 0.6rem;
+}
+
+.lex-def {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 0.8rem;
+}
+
+.lex-charge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--text-faint);
+}
+
+.lex-charge span {
+  color: var(--accent-dim);
+}
+
+/* ─── RULES AND DAILY ─── */
+.rules-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.rules-list li {
+  padding: 0.8rem 0 0.8rem 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+
+.rules-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent-dim);
+}
+
+.daily {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  margin: 3rem 0;
+}
+
+.daily-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+}
+
+.daily p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+/* ─── TIMELINE RESPONSIVE ─── */
+@media (max-width: 640px) {
+  .era, .sensory, .lexicon { padding: 4rem 1.5rem; }
+  .event { grid-template-columns: 1fr; gap: 0.3rem; }
+  .daily { padding: 1.5rem; }
+  .summary-text { padding-left: 1.2rem; }
 }
