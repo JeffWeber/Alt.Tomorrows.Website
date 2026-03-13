@@ -20,6 +20,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html {
+  color-scheme: dark;
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--neutral) var(--bg-deep);
@@ -359,7 +360,6 @@ nav {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.88rem;
   font-weight: 300;
-  outline: none;
   transition: border-color 0.3s;
 }
 
@@ -367,8 +367,10 @@ nav {
   color: var(--text-faint);
 }
 
-.signup-form input[type="email"]:focus {
+.signup-form input[type="email"]:focus-visible {
   border-color: var(--text-dim);
+  outline: 2px solid var(--text-dim);
+  outline-offset: 2px;
 }
 
 .signup-form button {
@@ -382,7 +384,7 @@ nav {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
   white-space: nowrap;
 }
 
@@ -426,6 +428,25 @@ footer {
 
 .footer-links a:hover {
   color: var(--text-dim);
+}
+
+/* ─── FOCUS STATES ─── */
+.nav-links a:focus-visible,
+.footer-links a:focus-visible {
+  outline: 2px solid var(--text-dim);
+  outline-offset: 3px;
+  border-radius: 1px;
+  color: var(--text-primary);
+}
+
+.timeline-card:focus-visible {
+  outline: 2px solid var(--text-dim);
+  outline-offset: 2px;
+}
+
+.signup-form button:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
 }
 
 /* ─── ANIMATIONS ─── */
@@ -839,4 +860,24 @@ footer {
   .event { grid-template-columns: 1fr; gap: 0.3rem; }
   .daily { padding: 1.5rem; }
   .summary-text { padding-left: 1.2rem; }
+}
+
+/* ─── REDUCED MOTION ─── */
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .section-label,
+  .timeline-grid {
+    opacity: 1;
+    animation: none;
+  }
+
+  .about-block,
+  .signup,
+  .era,
+  .sensory,
+  .lexicon {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
