@@ -560,7 +560,7 @@ footer {
 /* ─── ERA SECTIONS ─── */
 .era {
   border-top: 1px solid var(--border);
-  padding: 6rem 2rem;
+  padding: 6rem 2rem 3rem;
   max-width: 780px;
   margin: 0 auto;
   opacity: 0;
@@ -800,7 +800,6 @@ footer {
   font-size: 0.92rem;
   line-height: 1.65;
   position: relative;
-  border-bottom: 1px solid var(--border);
 }
 
 .rules-list li::before {
@@ -839,16 +838,6 @@ footer {
   margin: 0 auto;
   padding: 0 2rem 6rem;
   text-align: center;
-}
-
-.transition-vector::before {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 1px;
-  background: var(--accent-dim);
-  margin: 0 auto 2.5rem;
-  opacity: 0.5;
 }
 
 .transition-vector p {
