@@ -248,7 +248,17 @@ nav {
   border: 1px solid var(--border);
 }
 
-/* ─── Accent Colors per Timeline ─── */
+/* ─── Accent Colors per Timeline (ROYGB tone spectrum) ─── */
+/* bad → medium-bad → neutral → medium-good → good */
+
+.accent-crimson {
+  --accent: #a85454;
+  --accent-dim: #8a3f3f;
+  --accent-glow: #c46a6a;
+}
+.accent-crimson .color-bar { background: var(--accent); }
+.accent-crimson .card-span { color: var(--accent-dim); }
+
 .accent-amber {
   --accent: #c4923a;
   --accent-dim: #a07830;
@@ -257,21 +267,29 @@ nav {
 .accent-amber .color-bar { background: var(--accent); }
 .accent-amber .card-span { color: var(--accent-dim); }
 
-.accent-slate {
-  --accent: #6a8fa8;
-  --accent-dim: #4a6b83; /* TBD dim, using a darker slate for now */
-  --accent-glow: #8cb5d1; /* TBD glow, using lighter slate */
+.accent-ochre {
+  --accent: #b8a44a;
+  --accent-dim: #968537;
+  --accent-glow: #d4be5e;
 }
-.accent-slate .color-bar { background: var(--accent); }
-.accent-slate .card-span { color: var(--accent-dim); }
+.accent-ochre .color-bar { background: var(--accent); }
+.accent-ochre .card-span { color: var(--accent-dim); }
 
 .accent-moss {
   --accent: #7a9a6e;
-  --accent-dim: #5c7851; /* TBD dim, using a darker moss */
-  --accent-glow: #9bc08e; /* TBD glow, using a lighter moss */
+  --accent-dim: #5c7851;
+  --accent-glow: #9bc08e;
 }
 .accent-moss .color-bar { background: var(--accent); }
 .accent-moss .card-span { color: var(--accent-dim); }
+
+.accent-slate {
+  --accent: #6a8fa8;
+  --accent-dim: #4a6b83;
+  --accent-glow: #8cb5d1;
+}
+.accent-slate .color-bar { background: var(--accent); }
+.accent-slate .card-span { color: var(--accent-dim); }
 
 /* ─── WHAT IS THIS ─── */
 .about-block {
