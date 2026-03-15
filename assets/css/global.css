@@ -853,6 +853,7 @@ footer {
   border-bottom: 1px solid var(--border);
   padding: 6rem 2rem;
   max-width: 780px;
+  margin: 0 auto;
 }
 
 .trajectory-title {
