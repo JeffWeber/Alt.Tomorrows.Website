@@ -555,6 +555,7 @@ footer {
   font-style: italic;
   border-left: 2px solid var(--accent-dim);
   padding-left: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 /* ─── ERA SECTIONS ─── */
@@ -803,6 +804,7 @@ footer {
   font-size: 0.95rem;
   line-height: 1.8;
   font-style: italic;
+  margin-bottom: 1.5rem;
 }
 
 /* ─── TRANSITION VECTOR ─── */
@@ -818,6 +820,7 @@ footer {
   color: var(--text-dim);
   font-size: 0.95rem;
   line-height: 1.85;
+  margin-bottom: 1.5rem;
 }
 
 /* ─── TRAJECTORY BLOCK ─── */
@@ -841,6 +844,7 @@ footer {
   font-size: 1rem;
   line-height: 1.85;
   max-width: 720px;
+  margin-bottom: 1.5rem;
 }
 
 
