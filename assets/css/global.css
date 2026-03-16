@@ -823,31 +823,6 @@ footer {
   margin-bottom: 1.5rem;
 }
 
-/* ─── TRAJECTORY BLOCK ─── */
-.trajectory-block {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 6rem 2rem;
-  max-width: 780px;
-  margin: 0 auto;
-}
-
-.trajectory-title {
-  font-family: 'Instrument Serif', serif;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-}
-
-.trajectory-block p {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.85;
-  max-width: 720px;
-  margin-bottom: 1.5rem;
-}
-
-
 /* ─── TIMELINE RESPONSIVE ─── */
 @media (max-width: 640px) {
   .era, .sensory, .lexicon { padding: 4rem 1.5rem; }
