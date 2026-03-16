@@ -587,7 +587,7 @@ footer {
 
 .era-title {
   font-family: 'Instrument Serif', serif;
-  font-size: 2.2rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 400;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
@@ -678,7 +678,7 @@ footer {
 
 .sensory-title {
   font-family: 'Instrument Serif', serif;
-  font-size: 2.2rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 400;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
@@ -714,7 +714,7 @@ footer {
 
 .lexicon-title {
   font-family: 'Instrument Serif', serif;
-  font-size: 2.2rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 400;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
@@ -791,7 +791,7 @@ footer {
 
 .daily-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--accent);
@@ -831,7 +831,7 @@ footer {
 
 .trajectory-title {
   font-family: 'Instrument Serif', serif;
-  font-size: 2.2rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 400;
   margin-bottom: 1.5rem;
 }
