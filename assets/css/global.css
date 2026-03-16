@@ -602,7 +602,8 @@ footer {
   margin-bottom: 2.5rem;
 }
 
-.era-body p {
+.era-body p,
+.prose-block p {
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
   font-size: 1.02rem;
@@ -690,34 +691,6 @@ footer {
   font-style: italic;
 }
 
-.sense-block {
-  margin-bottom: 3rem;
-}
-
-.sense-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.sense-label::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
-
-.sense-block p {
-  color: var(--text-secondary);
-  font-size: 0.98rem;
-  line-height: 1.8;
-}
 
 /* ─── LEXICON ─── */
 .lexicon {
@@ -870,19 +843,6 @@ footer {
   max-width: 720px;
 }
 
-/* ─── LABELED BLOCK (prose variant of .daily, non-italic) ─── */
-.labeled-block {
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  padding: 2.5rem;
-  margin: 2rem 0;
-}
-
-.labeled-block p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.8;
-}
 
 /* ─── TIMELINE RESPONSIVE ─── */
 @media (max-width: 640px) {
