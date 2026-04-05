@@ -52,7 +52,7 @@ function showStory(id) {
   showPage('story');
   
   // Fetch actual markdown content
-  fetch(`stories/${s.id}.md`)
+  fetch(`stories/${s.id}/story.md`)
     .then(res => {
         if (!res.ok) throw new Error('Network response was not ok');
         return res.text();
