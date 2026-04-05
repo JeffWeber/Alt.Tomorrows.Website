@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alternate Tomorrows</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+<nav>
+  <button class="site-name" onclick="showPage('home')">Alternate Tomorrows</button>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">Dark</button>
+    <button class="about-btn" onclick="showPage('about')" title="About">?</button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="home">
+  <div class="grid-wrap" id="gridWrap"></div>
+</div>
+
+<!-- STORY VIEW -->
+<div id="story-view">
+  <div class="story-header">
+    <button class="back-btn" onclick="showPage('home')">← All Stories</button>
+    <div class="story-meta" id="sv-meta"></div>
+    <h1 id="sv-title"></h1>
+  </div>
+  <div class="story-body" id="sv-body"></div>
+</div>
+
+<!-- ABOUT VIEW -->
+<div id="about-view">
+  <div class="about-body">
+    <button class="back-btn" onclick="showPage('home')">← Back</button>
+    <h2>About Alternate Tomorrows</h2>
+    <p><strong>Alternate Tomorrows</strong> is a collection of short fiction set in futures that science hasn't ruled out.</p>
+    <p>These aren't stories about faster-than-light travel or alien civilizations. They're about the quieter strangeness closer at hand — the researcher who finds nine missing seconds in a signal from Titan, the cartographer racing to redraw coastlines before they go to print, the field scientist watching a flower bloom in January.</p>
+    <p>Each story begins with something plausible. What happens next is fiction. The line between the two is the point.</p>
+    <p>New stories are added when they're ready. Each one gets a number. That's all.</p>
+  </div>
+</div>
+
+<footer>Alternate Tomorrows</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "The Cartographer's Last Survey",
+    "date": "March 2026",
+    "teaser": "[Placeholder teaser data to be added from 03_metadata.json later]"
+  },
+  {
+    "id": 2,
+    "title": "Signal Latency",
+    "date": "January 2026",
+    "teaser": "[Placeholder teaser data to be added from 03_metadata.json later]"
+  },
+  {
+    "id": 3,
+    "title": "The Phenology of Forgetting",
+    "date": "November 2025",
+    "teaser": "[Placeholder teaser data to be added from 03_metadata.json later]"
+  }
+]
