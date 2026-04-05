@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alternate Tomorrows</title>
+<style>
+  :root {
+    --bg: #f5f2ec;
+    --text: #1a1a1a;
+    --muted: #9a9590;
+    --accent: #2d6a4f;
+    --border: #d8d4cc;
+    --hover-bg: #1a1a1a;
+    --hover-text: #f5f2ec;
+    --tooltip-bg: #1a1a1a;
+    --tooltip-text: #f5f2ec;
+  }
+  .dark {
+    --bg: #111110;
+    --text: #e8e4dc;
+    --muted: #5a5550;
+    --accent: #52b788;
+    --border: #2a2a28;
+    --hover-bg: #e8e4dc;
+    --hover-text: #111110;
+    --tooltip-bg: #e8e4dc;
+    --tooltip-text: #111110;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+
+  body {
+    font-family: 'Lora', serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 2rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .site-name {
+    font-family: 'Lora', serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  .nav-right { display: flex; align-items: center; gap: 1.2rem; }
+  .theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    cursor: pointer;
+    padding: 0.3rem 0.65rem;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 0.73rem;
+    letter-spacing: 0.06em;
+    transition: all 0.2s;
+  }
+  .theme-toggle:hover { color: var(--text); border-color: var(--text); }
+  .about-btn {
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    color: var(--muted);
+    cursor: pointer;
+    border: none;
+    background: none;
+    transition: color 0.2s;
+    line-height: 1;
+  }
+  .about-btn:hover { color: var(--text); }
+
+  /* PAGES */
+  #home, #story-view, #about-view { display: none; flex: 1; }
+  #home { display: flex; }
+
+  /* NUMBER GRID */
+  .grid-wrap {
+    flex: 1;
+    padding: 3rem 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .num-item {
+    position: relative;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 0.4rem 0.5rem;
+    border-radius: 3px;
+    transition: background 0.15s, color 0.15s;
+    user-select: none;
+  }
+  .num-dot {
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--muted);
+    margin: 3px auto 0;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .num-item.visited .num-dot { opacity: 1; }
+  .num-item:hover {
+    background: var(--hover-bg);
+    color: var(--hover-text);
+  }
+  .num-item:hover .tooltip { opacity: 1; pointer-events: none; }
+
+  /* TOOLTIP */
+  .tooltip {
+    opacity: 0;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 260px;
+    background: var(--tooltip-bg);
+    color: var(--tooltip-text);
+    padding: 1rem 1.1rem;
+    border-radius: 4px;
+    pointer-events: none;
+    transition: opacity 0.15s;
+    z-index: 200;
+  }
+  .tooltip-title {
+    font-family: 'Georgia', serif;
+    font-size: 0.88rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+  }
+  .tooltip-teaser {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.55;
+    opacity: 0.75;
+  }
+  /* flip tooltip if near right edge */
+  .num-item.flip-left .tooltip { left: auto; right: 0; }
+  /* flip tooltip if near bottom */
+  .num-item.flip-up .tooltip { top: auto; bottom: calc(100% + 10px); }
+
+  /* STORY VIEW */
+  #story-view { flex-direction: column; }
+  .story-header {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 4rem 2rem 2.5rem;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+  }
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.73rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin-bottom: 2rem;
+    padding: 0;
+    transition: color 0.2s;
+  }
+  .back-btn:hover { color: var(--text); }
+  .story-meta {
+    font-family: Arial, sans-serif;
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .story-header h1 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: normal;
+    line-height: 1.2;
+  }
+  .story-body {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 6rem;
+    font-size: 1.08rem;
+    line-height: 1.85;
+    width: 100%;
+  }
+  .story-body p { margin-bottom: 1.4em; }
+
+  /* ABOUT VIEW */
+  #about-view { flex-direction: column; }
+  .about-body {
+    max-width: 580px;
+    margin: 0 auto;
+    padding: 5rem 2rem 6rem;
+    width: 100%;
+  }
+  .about-body h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+  }
+  .about-body p {
+    font-family: Arial, sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 1.2em;
+  }
+  .about-body p strong {
+    color: var(--text);
+    font-family: 'Georgia', serif;
+    font-weight: normal;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 1.2rem 2rem;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: border-color 0.3s;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <button class="site-name" onclick="showPage('home')">Alternate Tomorrows</button>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">Dark</button>
+    <button class="about-btn" onclick="showPage('about')" title="About">?</button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="home">
+  <div class="grid-wrap" id="gridWrap"></div>
+</div>
+
+<!-- STORY VIEW -->
+<div id="story-view">
+  <div class="story-header">
+    <button class="back-btn" onclick="showPage('home')">← All Stories</button>
+    <div class="story-meta" id="sv-meta"></div>
+    <h1 id="sv-title"></h1>
+  </div>
+  <div class="story-body" id="sv-body"></div>
+</div>
+
+<!-- ABOUT VIEW -->
+<div id="about-view">
+  <div class="about-body">
+    <button class="back-btn" onclick="showPage('home')">← Back</button>
+    <h2>About Alternate Tomorrows</h2>
+    <p><strong>Alternate Tomorrows</strong> is a collection of short fiction set in futures that science hasn't ruled out.</p>
+    <p>These aren't stories about faster-than-light travel or alien civilizations. They're about the quieter strangeness closer at hand — the researcher who finds nine missing seconds in a signal from Titan, the cartographer racing to redraw coastlines before they go to print, the field scientist watching a flower bloom in January.</p>
+    <p>Each story begins with something plausible. What happens next is fiction. The line between the two is the point.</p>
+    <p>New stories are added when they're ready. Each one gets a number. That's all.</p>
+  </div>
+</div>
+
+<footer>Alternate Tomorrows</footer>
+
+<script>
+const visited = new Set();
+
+const stories = [
+  {
+    id: 1,
+    title: "The Cartographer's Last Survey",
+    date: "March 2026",
+    wordcount: "~900 words",
+    teaser: "When sea-level models proved wrong by three decades, Elena had forty-eight hours to redraw every coastline before the maps went to print.",
+    body: `<p>The error was discovered on a Tuesday, which Elena always felt was the worst possible day for a crisis. Mondays you expected it. By Wednesday you had momentum. But Tuesday sat in the week like a pothole — just far enough from both ends to feel stranded.</p><p>The model had underestimated thermal expansion in the Beaufort Gyre. A small coefficient, buried in a subroutine no one had touched since 2019. The result: their sea-level projections were off by 2.3 meters, compressed into a timeline thirty-one years shorter than published.</p><p>Elena pulled up the master atlas file. Four hundred and twelve coastal charts. The Netherlands, Bangladesh, Miami, Shanghai, Lagos — all of them wrong. All of them already licensed to twelve governments and distributed to schools across forty countries.</p><p>"We can push a correction notice," said her supervisor, Priya, from the doorway.</p><p>"Corrections don't replace what's already in the classroom." Elena zoomed into the chart of Jakarta. The city's planned seawall ended six kilometers too far inland. Infrastructure money, already allocated, already announced. "Someone built a budget around this."</p><p>Priya was quiet for a moment. "The print run for the school edition closes Thursday morning."</p><p>Elena looked at the clock. Forty-eight hours.</p><p>She called in every cartographer on staff and three who weren't. They worked in shifts, drinking bad coffee and speaking in the clipped shorthand of people who have named every peninsula twice. Coastlines are not lines — they are arguments between land and water, negotiated fresh with every tide. To redraw them was to make a new claim about the future.</p><p>By Wednesday afternoon they had revised 310 charts. Elena's eyes ached. She kept thinking about a teacher somewhere, standing in front of a map of Miami, pointing to streets that would be seafloor. Students taking notes. Notes becoming memory. Memory becoming the frame through which they understood the world.</p><p>Maps were not descriptions. They were instructions.</p><p>At 4 a.m. Thursday she submitted the final file. She sat alone in the office watching the upload bar crawl across her screen. Outside, the city was dark and quiet, utterly indifferent to the redrawn edges of itself.</p><p>The bar reached 100%. She closed her laptop.</p><p>Three months later, a hydrology student in Rotterdam wrote to thank the atlas team for the correction. She had almost designed her dissertation study site around the old model. The new charts, she said, had saved her a year.</p><p>Elena printed the email and tacked it to her wall, next to a hand-drawn map she'd made as a child — inaccurate, earnest, the coastlines wobbly and optimistic.</p><p>She thought: that's the only kind there is.</p>`
+  },
+  {
+    id: 2,
+    title: "Signal Latency",
+    date: "January 2026",
+    wordcount: "~700 words",
+    teaser: "The first message from the Titan probe took seventy-three minutes to arrive. The second took seventy-three minutes and nine seconds. No one could explain the nine seconds.",
+    body: `<p>Mission Control had a protocol for anomalies. There were protocols for almost everything — for thruster misfires, for corrupted telemetry, for the death of a team member during a shift. What there was not a protocol for was a signal arriving late in a way that implied something had slowed it down.</p><p>Light does not slow down. This is among the more reliable facts in physics.</p><p>Dr. Yusuf Adebayo ran the calculation four times before he told anyone. He used two different clocks and had a colleague check his arithmetic with pencil and paper, the way they'd been taught in a world before the answer could come back in milliseconds. The nine-second discrepancy held.</p><p>"Interference," said mission director Carla Voss. "Solar weather, plasma, something in the transmission medium."</p><p>"We've seen solar interference. It introduces noise. It doesn't introduce consistent latency." Yusuf pulled up the waveform. The signal was clean — cleaner than expected, actually. "If anything, the signal quality improved."</p><p>The third message arrived. Seventy-three minutes, nine seconds.</p><p>The fourth: seventy-three minutes, nine seconds.</p><p>They published nothing. That was protocol too — you did not publish anomalies until you understood them, and you especially did not publish anomalies that sounded, to a headline writer, like something they might want to make into something else.</p><p>Yusuf spent three weeks eliminating explanations. Clock drift. Orbital calculation error. A firmware update on the probe's transmitter that might have introduced a processing delay. One by one the candidates fell. The nine seconds remained, punctual as a heartbeat.</p><p>He began, privately, to think about what else might cause consistent latency. There was a class of theoretical objects — dense, compact — whose gravitational influence on passing signals was well-documented. But the math required one to be positioned almost exactly between Earth and Titan, along a very specific corridor of space, and that seemed—</p><p>He stopped himself. This was how bad thinking started. You ruled out the likely, and then the unlikely started to look inevitable. That was not science. That was narrative.</p><p>In the end, the team found it: a firmware update, deployed six weeks earlier, that introduced a 9.3-second handshake delay in the backup communication array. The probe had switched to backup without flagging it. The delay was consistent. The signal was clean because backup had better shielding.</p><p>A mistake, caught and corrected. The protocols were updated.</p><p>Yusuf wrote up the incident report. He was thorough and precise and he did not mention the two days he had spent, quietly, doing other calculations. The ones he had deleted before anyone could see them.</p><p>He told himself it hadn't been real science anyway.</p><p>He kept the printout in a drawer at home, folded twice.</p>`
+  },
+  {
+    id: 3,
+    title: "The Phenology of Forgetting",
+    date: "November 2025",
+    wordcount: "~800 words",
+    teaser: "Scientists had been tracking the first bloom of the meadow for sixty years. Then the meadow bloomed in January, and no one knew what to write in the column marked 'Normal.'",
+    body: `<p>The notebook had been kept continuously since 1963. That was the part that mattered most to Dr. Sasha Orimoto, more even than the data itself — the fact of the continuity, the chain of hands that had carried it. Field notebooks got wet and dried and stiffened. This one had been transcribed into a database in 1998, but the original still existed, held together by a rubber band that had probably been replaced a dozen times without anyone noting it.</p><p>Every spring, since 1963, someone had walked out to Sector 7 of the Whitmore Research Reserve and recorded the date of first bloom for Claytonia virginica — spring beauty, a small white wildflower, a reliable and early riser. It was, climatologists had come to understand, an excellent proxy. A living thermometer. Its blooms tracked the thermal accumulation of late winter with more sensitivity than most instruments.</p><p>The record showed a trend — gradual, then less gradual. In the 1960s, first bloom averaged April 3rd. By the 1980s, March 22nd. By 2010, March 7th. Last year: February 18th.</p><p>This January, Sasha had gone out on a routine equipment check. She had not been looking for blooms.</p><p>There were three of them, pale and small and entirely real, pushing through soil that had barely frozen.</p><p>She photographed them. She stood in the field for a long time. Then she walked back to the station and opened the database and looked at the column header: <em>First Bloom (date).</em> Below it, sixty-two years of April and March dates, then February, then — what? January 11th. A date that had no precedent, no neighbor, no context in the column above it.</p><p>She typed it in. The database accepted it without comment.</p><p>The thing about phenological records, she had always told students, was that they were optimistic documents. Every entry implied a next entry. Every "first bloom" assumed a following year in which the category would still make sense — in which there would still be a first bloom, a recognizable spring, a flower that knew what season it was supposed to be responding to.</p><p>She pulled up the sixty-two-year graph. The trend line, extended, suggested they had perhaps eight years before January blooms became typical. After that the models got uncertain. The plant could adapt — shift its trigger conditions, go dormant differently. Or it could mis-time its emergence repeatedly until it stopped emerging at all.</p><p>The notebook entry for that day was brief. She had written it by hand, the way the record had always been kept, even after the database: <em>Jan. 11. First bloom observed, Sector 7. Three individuals. Ground not frozen at surface. Air temp at observation: 6°C.</em></p><p>She did not write what she had felt, standing there. Field notebooks were not for that.</p><p>But she kept the photograph on her desktop — three white flowers against dark January soil — and when people asked what she studied, she had started saying: memory. The memory of seasons. What ecosystems hold onto, and what they lose, and how you know the difference.</p>`
+  }
+];
+
+let dark = false;
+let currentPage = 'home';
+
+function toggleTheme() {
+  dark = !dark;
+  document.body.classList.toggle('dark', dark);
+  document.getElementById('themeBtn').textContent = dark ? 'Light' : 'Dark';
+}
+
+function showPage(page) {
+  ['home','story-view','about-view'].forEach(id => {
+    document.getElementById(id).style.display = 'none';
+  });
+  if (page === 'home') document.getElementById('home').style.display = 'flex';
+  else if (page === 'story') document.getElementById('story-view').style.display = 'flex';
+  else if (page === 'about') document.getElementById('about-view').style.display = 'flex';
+  window.scrollTo(0, 0);
+}
+
+function showStory(id) {
+  const s = stories.find(x => x.id === id);
+  document.getElementById('sv-meta').textContent = s.date + '  ·  ' + s.wordcount;
+  document.getElementById('sv-title').textContent = s.title;
+  document.getElementById('sv-body').innerHTML = s.body;
+  visited.add(id);
+  document.querySelectorAll('.num-item').forEach(el => {
+    const sid = parseInt(el.dataset.id);
+    el.classList.toggle('visited', visited.has(sid));
+  });
+  showPage('story');
+}
+
+function renderGrid() {
+  const wrap = document.getElementById('gridWrap');
+  wrap.innerHTML = stories.map((s, i) => {
+    const num = String(i + 1).padStart(2, '0');
+    return `<div class="num-item" onclick="showStory(${s.id})" onmouseenter="positionTooltip(this)">
+      ${num}
+      <div class="tooltip">
+        <div class="tooltip-title">${s.title}</div>
+        <div class="tooltip-teaser">${s.teaser}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function positionTooltip(el) {
+  const rect = el.getBoundingClientRect();
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  el.classList.toggle('flip-left', rect.left + 270 > vw);
+  el.classList.toggle('flip-up', rect.bottom + 140 > vh);
+}
+
+renderGrid();
+showPage('home');
+</script>
+</body>
+</html>
