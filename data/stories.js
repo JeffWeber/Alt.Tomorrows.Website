@@ -4,13 +4,13 @@
 // ─────────────────────────────────────────────────────────────────
 
 const STORIES = [
-  { no: "0001", title: "Below Threshold", premise: "In a future optimized for comfort, grief is a quiet form of rebellion.", date: "May 15, 2026", year: 2026, tags: ["Human Augmentation", "Neurotechnology", "Longevity", "AI", "Dystopian"], file: "stories/0001-below-threshold.html" }
+  { no: "0001", title: "Below Threshold", premise: "In a future optimized for comfort, grief is a quiet form of rebellion.", date: "May 15, 2026", year: 2026, tags: ["Human Augmentation", "Neurotechnology", "Longevity"], file: "stories/0001-below-threshold.html" }
 ];
 
 const VIGNETTES = [
-  { no: "0001", title: "Sixty-Two Hours", hook: "A space elevator tech watches civilization burn and does the math.", date: "May 15, 2026", year: 2026, tags: ["Space Exploration", "Survival", "Dystopian", "Space Industry", "Isolation"], file: "vignettes/0001-sixty-two-hours.html" }
+  { no: "0001", title: "Sixty-Two Hours", hook: "A space elevator tech watches civilization burn and does the math.", date: "May 15, 2026", year: 2026, tags: ["Space Exploration", "Survival", "Dystopian"], file: "vignettes/0001-sixty-two-hours.html" }
 ];
 
 const TAGS = [
-  "All", "AI", "Dystopian", "Human Augmentation", "Isolation", "Longevity", "Neurotechnology", "Space Exploration", "Space Industry", "Survival"
+  "All", "Dystopian", "Human Augmentation", "Longevity", "Neurotechnology", "Space Exploration", "Survival"
 ];
