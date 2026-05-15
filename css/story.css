@@ -83,8 +83,8 @@
   align-items: center;
 }
 .story__meta .tags .dot { color: var(--ink-faint); }
-.story__meta .tags a { color: var(--ink); transition: color 200ms; }
-.story__meta .tags a:hover { color: var(--accent); }
+.story__meta .tags a { color: var(--accent); transition: color 200ms; }
+.story__meta .tags a:hover { color: var(--ink); }
 
 /* ─── Body ────────────────────────────────────────────────────── */
 .story__body {

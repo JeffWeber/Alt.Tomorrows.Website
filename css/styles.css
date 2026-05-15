@@ -13,7 +13,7 @@
   --ink-faint:     #4a4842;
   --rule:          #2c2c2a;
   --rule-soft:     #232322;
-  --accent:        #d97757;
+  --accent:        #7098ba;
   --accent-ink:    #0f0f0d;
 
   /* tokens */
@@ -572,7 +572,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ink-mute);
+  color: var(--accent);
   background: none;
   border: 0;
   padding: 0;
