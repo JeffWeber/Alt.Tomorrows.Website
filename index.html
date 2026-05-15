@@ -1,464 +1,225 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alternate Tomorrows — Stories &amp; Vignettes</title>
-  <meta name="description" content="Plausible near-future short fiction about the science, technologies, and social trends already taking shape around us." />
+  <meta name="description"
+    content="Plausible near-future short fiction about the science, technologies, and social trends taking shape around us." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Oswald:wght@400;500;600&display=swap"
+    rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
-<div class="shell">
+  <div class="shell">
 
-  <!-- TOPBAR -->
-  <header class="topbar">
-    <a class="logo" href="index.html">
-      <span>Alternate</span>
-      <span>Tomorrows</span>
-    </a>
-    <nav class="nav">
-      <a href="index.html" class="is-active">Stories</a>
-      <a href="index.html#vignettes">Vignettes</a>
-      <a href="about.html">About</a>
-      <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">Light</button>
-    </nav>
-  </header>
-
-  <!-- MAIN -->
-  <main>
-
-    <!-- PAGE HEAD -->
-    <header class="page-head">
-      <div class="page-head__row">
-        <h1>Tomorrows</h1>
-        <div class="t-label">31 entries · ongoing</div>
-      </div>
-      <p class="page-head__sub">Plausible near-future stories &amp; vignettes about the science, technologies, and social trends already taking shape around us.</p>
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <a class="logo" href="index.html">
+        <span>Alternate</span>
+        <span>Tomorrows</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="is-active">Stories</a>
+        <a href="index.html#vignettes">Vignettes</a>
+        <a href="about.html">About</a>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">Light</button>
+      </nav>
     </header>
 
-    <!-- FILTER BAR -->
-    <div class="filterbar">
-      <div class="filterbar__group" role="group" aria-label="Filter by tag">
-        <button data-tag="All"        aria-pressed="true" ><span class="pill-dot"></span>All</button>
-        <button data-tag="AI"         aria-pressed="false"><span class="pill-dot"></span>AI</button>
-        <button data-tag="Climate"    aria-pressed="false"><span class="pill-dot"></span>Climate</button>
-        <button data-tag="Governance" aria-pressed="false"><span class="pill-dot"></span>Governance</button>
-        <button data-tag="Identity"   aria-pressed="false"><span class="pill-dot"></span>Identity</button>
-        <button data-tag="Technology" aria-pressed="false"><span class="pill-dot"></span>Technology</button>
-        <button data-tag="Work"       aria-pressed="false"><span class="pill-dot"></span>Work</button>
-        <button data-tag="Culture"    aria-pressed="false"><span class="pill-dot"></span>Culture</button>
-        <button data-tag="Biotech"    aria-pressed="false"><span class="pill-dot"></span>Biotech</button>
-        <button data-tag="Memory"     aria-pressed="false"><span class="pill-dot"></span>Memory</button>
-        <button data-tag="Energy"     aria-pressed="false"><span class="pill-dot"></span>Energy</button>
-        <button data-tag="Mobility"   aria-pressed="false"><span class="pill-dot"></span>Mobility</button>
-        <button data-tag="Space"      aria-pressed="false"><span class="pill-dot"></span>Space</button>
-        <button data-tag="Education"  aria-pressed="false"><span class="pill-dot"></span>Education</button>
+    <!-- MAIN -->
+    <main>
+
+      <!-- PAGE HEAD -->
+      <header class="page-head">
+        <div class="page-head__row">
+          <h1>Tomorrows</h1>
+          <div class="t-label">1 entries · ongoing</div>
+        </div>
+        <p class="page-head__sub">Plausible near-future stories &amp; vignettes about the science, technologies, and
+          social trends already taking shape around us.</p>
+      </header>
+
+      <!-- FILTER BAR -->
+      <div class="filterbar">
+        <div class="filterbar__group" role="group" aria-label="Filter by tag">
+          <button data-tag="All" aria-pressed="true"><span class="pill-dot"></span>All</button>
+          <button data-tag="AI" aria-pressed="false"><span class="pill-dot"></span>AI</button>
+          <button data-tag="Dystopian" aria-pressed="false"><span class="pill-dot"></span>Dystopian</button>
+          <button data-tag="Human Augmentation" aria-pressed="false"><span class="pill-dot"></span>Human Augmentation</button>
+          <button data-tag="Longevity" aria-pressed="false"><span class="pill-dot"></span>Longevity</button>
+          <button data-tag="Neurotechnology" aria-pressed="false"><span class="pill-dot"></span>Neurotechnology</button>
+        </div>
+        <div class="filterbar__count" id="filter-count">31 ENTRIES</div>
       </div>
-      <div class="filterbar__count" id="filter-count">31 ENTRIES</div>
-    </div>
 
-    <!-- LEDGER (two-column: Stories left, Vignettes right) -->
-    <div class="ledger">
+      <!-- LEDGER (two-column: Stories left, Vignettes right) -->
+      <div class="ledger">
 
-      <!-- STORIES COLUMN -->
-      <div class="ledger__col" id="stories-col">
-        <div class="ledger__head">
-          <h2>Stories <span class="slash">/</span></h2>
-          <div class="t-label" id="stories-count">21 entries</div>
-        </div>
-
-        <a class="ledger-row enter" data-tags="Climate,Culture" href="stories/0021-the-quiet-after.html">
-          <div class="ledger-row__num">0021</div>
-          <div class="ledger-row__title">The Quiet After</div>
-          <div class="ledger-row__date">Apr 18</div>
-          <span class="ledger-row__premise">In the cities that adapted, the loudest thing left was birds.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Climate">Climate</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Culture">Culture</button>
+        <!-- STORIES COLUMN -->
+        <div class="ledger__col" id="stories-col">
+          <div class="ledger__head">
+            <h2>Stories <span class="slash">/</span></h2>
+            <div class="t-label" id="stories-count">01 entries</div>
           </div>
-        </a>
 
-        <a class="ledger-row enter" data-tags="Space,Work" href="#">
-          <div class="ledger-row__num">0020</div>
-          <div class="ledger-row__title">Orbit, Domestic</div>
-          <div class="ledger-row__date">Apr 02</div>
-          <span class="ledger-row__premise">Three hundred kilometers up, someone is folding laundry.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Space">Space</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Work">Work</button>
+<!-- BEGIN:STORIES-ROWS -->
+          <a class="ledger-row enter" data-tags="Human Augmentation,Neurotechnology,Longevity,AI,Dystopian" href="stories/0001-below-threshold.html">
+            <div class="ledger-row__num">0001</div>
+            <div class="ledger-row__title">Below Threshold</div>
+            <div class="ledger-row__date">May 15</div>
+            <span class="ledger-row__premise">In a future optimized for comfort, grief is a quiet form of rebellion.</span>
+            <div class="ledger-row__tags">
+              <button class="ledger-row__tag" data-tag="Human Augmentation">Human Augmentation</button>
+              <span class="ledger-row__tag-sep">·</span>
+              <button class="ledger-row__tag" data-tag="Neurotechnology">Neurotechnology</button>
+              <span class="ledger-row__tag-sep">·</span>
+              <button class="ledger-row__tag" data-tag="Longevity">Longevity</button>
+              <span class="ledger-row__tag-sep">·</span>
+              <button class="ledger-row__tag" data-tag="AI">AI</button>
+              <span class="ledger-row__tag-sep">·</span>
+              <button class="ledger-row__tag" data-tag="Dystopian">Dystopian</button>
+            </div>
+          </a>
+<!-- END:STORIES-ROWS -->
+
+        </div><!-- /stories-col -->
+
+        <!-- VIGNETTES COLUMN -->
+        <div class="ledger__col" id="vignettes-col">
+          <div class="ledger__head">
+            <h2 id="vignettes">Vignettes <span class="slash">/</span></h2>
+            <div class="t-label" id="vignettes-count">10 entries</div>
           </div>
-        </a>
 
-        <a class="ledger-row enter" data-tags="Governance,Energy,Work" href="#">
-          <div class="ledger-row__num">0019</div>
-          <div class="ledger-row__title">The Long Repair</div>
-          <div class="ledger-row__date">Mar 21</div>
-          <span class="ledger-row__premise">Infrastructure is easy. Trust is the hard part.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Governance">Governance</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Energy">Energy</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Work">Work</button>
-          </div>
-        </a>
+          <a class="ledger-vrow enter" data-tags="Identity,Memory" href="#">
+            <div class="ledger-vrow__num">0010</div>
+            <div class="ledger-vrow__title">The Last Name We Kept</div>
+            <span class="ledger-vrow__arr">→</span>
+            <div class="ledger-vrow__tags">
+              <button class="ledger-vrow__tag" data-tag="Identity">Identity</button>
+              <span class="ledger-row__tag-sep">·</span>
+              <button class="ledger-vrow__tag" data-tag="Memory">Memory</button>
+            </div>
+          </a>
 
-        <a class="ledger-row enter" data-tags="Identity,Technology" href="#">
-          <div class="ledger-row__num">0018</div>
-          <div class="ledger-row__title">Children of the Signal</div>
-          <div class="ledger-row__date">Mar 04</div>
-          <span class="ledger-row__premise">They grew up with more bandwidth than borders.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Identity">Identity</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Technology">Technology</button>
-          </div>
-        </a>
+          <a class="ledger-vrow enter" data-tags="Technology,Memory" href="#">
+            <div class="ledger-vrow__num">0009</div>
+            <div class="ledger-vrow__title">Legacy Mode</div>
+            <span class="ledger-vrow__arr">→</span>
+            <div class="ledger-vrow__tags">
+              <button class="ledger-vrow__tag" data-tag="Technology">Technology</button>
+              <span class="ledger-row__tag-sep">·</span>
+              <button class="ledger-vrow__tag" data-tag="Memory">Memory</button>
+            </div>
+          </a>
 
-        <a class="ledger-row enter" data-tags="Biotech,Memory,Climate" href="#">
-          <div class="ledger-row__num">0017</div>
-          <div class="ledger-row__title">Grafted</div>
-          <div class="ledger-row__date">Feb 17</div>
-          <span class="ledger-row__premise">The tree remembers what its donor forgot.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Biotech">Biotech</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Memory">Memory</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Climate">Climate</button>
-          </div>
-        </a>
+          <a class="ledger-vrow enter" data-tags="Work" href="#">
+            <div class="ledger-vrow__num">0008</div>
+            <div class="ledger-vrow__title">A Day Without Metrics</div>
+            <span class="ledger-vrow__arr">→</span>
+            <div class="ledger-vrow__tags">
+              <button class="ledger-vrow__tag" data-tag="Work">Work</button>
+            </div>
+          </a>
 
-        <a class="ledger-row enter" data-tags="Memory,Culture" href="#">
-          <div class="ledger-row__num">0016</div>
-          <div class="ledger-row__title">The Memory Keepers</div>
-          <div class="ledger-row__date">Feb 02</div>
-          <span class="ledger-row__premise">Some libraries don't store books.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Memory">Memory</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Culture">Culture</button>
-          </div>
-        </a>
+          <a class="ledger-vrow enter" data-tags="Governance" href="#">
+            <div class="ledger-vrow__num">0007</div>
+            <div class="ledger-vrow__title">The Local Treaty</div>
+            <span class="ledger-vrow__arr">→</span>
+            <div class="ledger-vrow__tags">
+              <button class="ledger-vrow__tag" data-tag="Governance">Governance</button>
+            </div>
+          </a>
 
-        <a class="ledger-row enter" data-tags="Climate,Governance" href="#">
-          <div class="ledger-row__num">0015</div>
-          <div class="ledger-row__title">Before the Flood Maps</div>
-          <div class="ledger-row__date">Jan 19</div>
-          <span class="ledger-row__premise">We argued about predictions. They built anyway.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Climate">Climate</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Governance">Governance</button>
-          </div>
-        </a>
+          <a class="ledger-vrow enter" data-tags="Climate,Governance" href="#">
+            <div class="ledger-vrow__num">0006</div>
+            <div class="ledger-vrow__title">Prime Meridian Drift</div>
+            <span class="ledger-vrow__arr">→</span>
+            <div class="ledger-vrow__tags">
+              <button class="ledger-vrow__tag" data-tag="Climate">Climate</button>
+              <span class="ledger-row__tag-sep">·</span>
+              <button class="ledger-vrow__tag" data-tag="Governance">Governance</button>
+            </div>
+          </a>
 
-        <a class="ledger-row enter" data-tags="AI,Identity" href="#">
-          <div class="ledger-row__num">0014</div>
-          <div class="ledger-row__title">Left to the Algorithms</div>
-          <div class="ledger-row__date">Jan 05</div>
-          <span class="ledger-row__premise">A fable about convenience and surrender.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="AI">AI</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Identity">Identity</button>
-          </div>
-        </a>
+          <a class="ledger-vrow enter" data-tags="Culture" href="#">
+            <div class="ledger-vrow__num">0005</div>
+            <div class="ledger-vrow__title">Songs for the In-Between</div>
+            <span class="ledger-vrow__arr">→</span>
+            <div class="ledger-vrow__tags">
+              <button class="ledger-vrow__tag" data-tag="Culture">Culture</button>
+            </div>
+          </a>
 
-        <a class="ledger-row enter" data-tags="Energy,Work,Climate" href="#">
-          <div class="ledger-row__num">0013</div>
-          <div class="ledger-row__title">Night Shift, Grid Edge</div>
-          <div class="ledger-row__date">Dec 14</div>
-          <span class="ledger-row__premise">Two operators, one storm, an inheritance of cables.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Energy">Energy</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Work">Work</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Climate">Climate</button>
-          </div>
-        </a>
+          <a class="ledger-vrow enter" data-tags="Memory,Climate" href="#">
+            <div class="ledger-vrow__num">0004</div>
+            <div class="ledger-vrow__title">What the Lake Remembered</div>
+            <span class="ledger-vrow__arr">→</span>
+            <div class="ledger-vrow__tags">
+              <button class="ledger-vrow__tag" data-tag="Memory">Memory</button>
+              <span class="ledger-row__tag-sep">·</span>
+              <button class="ledger-vrow__tag" data-tag="Climate">Climate</button>
+            </div>
+          </a>
 
-        <a class="ledger-row enter" data-tags="Technology,Culture" href="#">
-          <div class="ledger-row__num">0012</div>
-          <div class="ledger-row__title">The Slow Network</div>
-          <div class="ledger-row__date">Nov 30</div>
-          <span class="ledger-row__premise">On the year we agreed to wait.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Technology">Technology</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Culture">Culture</button>
-          </div>
-        </a>
+          <a class="ledger-vrow enter" data-tags="Biotech,Culture" href="#">
+            <div class="ledger-vrow__num">0003</div>
+            <div class="ledger-vrow__title">Sourdough, Inheritance</div>
+            <span class="ledger-vrow__arr">→</span>
+            <div class="ledger-vrow__tags">
+              <button class="ledger-vrow__tag" data-tag="Biotech">Biotech</button>
+              <span class="ledger-row__tag-sep">·</span>
+              <button class="ledger-vrow__tag" data-tag="Culture">Culture</button>
+            </div>
+          </a>
 
-        <a class="ledger-row enter" data-tags="Technology,Identity" href="#">
-          <div class="ledger-row__num">0011</div>
-          <div class="ledger-row__title">Houses That Listened</div>
-          <div class="ledger-row__date">Nov 12</div>
-          <span class="ledger-row__premise">A neighborhood learns when to look away.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Technology">Technology</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Identity">Identity</button>
-          </div>
-        </a>
+          <a class="ledger-vrow enter" data-tags="Energy,Work" href="#">
+            <div class="ledger-vrow__num">0002</div>
+            <div class="ledger-vrow__title">Two A.M., the Substation</div>
+            <span class="ledger-vrow__arr">→</span>
+            <div class="ledger-vrow__tags">
+              <button class="ledger-vrow__tag" data-tag="Energy">Energy</button>
+              <span class="ledger-row__tag-sep">·</span>
+              <button class="ledger-vrow__tag" data-tag="Work">Work</button>
+            </div>
+          </a>
 
-        <a class="ledger-row enter" data-tags="Mobility,Climate" href="#">
-          <div class="ledger-row__num">0010</div>
-          <div class="ledger-row__title">Last Train to Antwerp</div>
-          <div class="ledger-row__date">Oct 27</div>
-          <span class="ledger-row__premise">What a continent does when it agrees, finally, to slow down.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Mobility">Mobility</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Climate">Climate</button>
-          </div>
-        </a>
+          <a class="ledger-vrow enter" data-tags="Space" href="#">
+            <div class="ledger-vrow__num">0001</div>
+            <div class="ledger-vrow__title">Postcards from Low Orbit</div>
+            <span class="ledger-vrow__arr">→</span>
+            <div class="ledger-vrow__tags">
+              <button class="ledger-vrow__tag" data-tag="Space">Space</button>
+            </div>
+          </a>
 
-        <a class="ledger-row enter" data-tags="AI,Memory" href="#">
-          <div class="ledger-row__num">0009</div>
-          <div class="ledger-row__title">The Inheritance</div>
-          <div class="ledger-row__date">Oct 09</div>
-          <span class="ledger-row__premise">What a model leaves behind when no one renews the lease.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="AI">AI</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Memory">Memory</button>
-          </div>
-        </a>
+        </div><!-- /vignettes-col -->
 
-        <a class="ledger-row enter" data-tags="Education,Climate" href="#">
-          <div class="ledger-row__num">0008</div>
-          <div class="ledger-row__title">Saltwater Schools</div>
-          <div class="ledger-row__date">Sep 22</div>
-          <span class="ledger-row__premise">Teaching arithmetic in a tide-shifted classroom.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Education">Education</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Climate">Climate</button>
-          </div>
-        </a>
+      </div><!-- /ledger -->
 
-        <a class="ledger-row enter" data-tags="Governance,Technology" href="#">
-          <div class="ledger-row__num">0007</div>
-          <div class="ledger-row__title">Open Source Country</div>
-          <div class="ledger-row__date">Sep 04</div>
-          <span class="ledger-row__premise">A small republic publishes its operating manual. Anyone can fork.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Governance">Governance</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Technology">Technology</button>
-          </div>
-        </a>
+    </main>
 
-        <a class="ledger-row enter" data-tags="Biotech,Work" href="#">
-          <div class="ledger-row__num">0006</div>
-          <div class="ledger-row__title">Lichen, Inc.</div>
-          <div class="ledger-row__date">Aug 18</div>
-          <span class="ledger-row__premise">The corporation, miniature and slow, with a forty-year roadmap.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Biotech">Biotech</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Work">Work</button>
-          </div>
-        </a>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div>Alternate Tomorrows · 2025–<span id="yr"></span></div>
+      <div class="footer-links">
+        <a href="#">RSS</a>
+        <a href="about.html">About</a>
+      </div>
+    </footer>
 
-        <a class="ledger-row enter" data-tags="Mobility,Culture" href="#">
-          <div class="ledger-row__num">0005</div>
-          <div class="ledger-row__title">Pilgrim Routes</div>
-          <div class="ledger-row__date">Jul 30</div>
-          <span class="ledger-row__premise">Old maps for new walks, post-engine.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Mobility">Mobility</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Culture">Culture</button>
-          </div>
-        </a>
+  </div><!-- /shell -->
 
-        <a class="ledger-row enter" data-tags="Work,Culture" href="#">
-          <div class="ledger-row__num">0004</div>
-          <div class="ledger-row__title">The Quiet Office</div>
-          <div class="ledger-row__date">Jul 12</div>
-          <span class="ledger-row__premise">Six people, a kettle, and the end of metrics.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Work">Work</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Culture">Culture</button>
-          </div>
-        </a>
-
-        <a class="ledger-row enter" data-tags="Culture,Mobility" href="#">
-          <div class="ledger-row__num">0003</div>
-          <div class="ledger-row__title">Songs for the In-Between</div>
-          <div class="ledger-row__date">Jun 21</div>
-          <span class="ledger-row__premise">What music does to a city without rush hours.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Culture">Culture</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Mobility">Mobility</button>
-          </div>
-        </a>
-
-        <a class="ledger-row enter" data-tags="Work,Mobility" href="#">
-          <div class="ledger-row__num">0002</div>
-          <div class="ledger-row__title">The Last Commute</div>
-          <div class="ledger-row__date">May 09</div>
-          <span class="ledger-row__premise">One driver. One morning. One last route.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Work">Work</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Mobility">Mobility</button>
-          </div>
-        </a>
-
-        <a class="ledger-row enter" data-tags="Governance,Identity" href="#">
-          <div class="ledger-row__num">0001</div>
-          <div class="ledger-row__title">Mirrors of the Republic</div>
-          <div class="ledger-row__date">Apr 14</div>
-          <span class="ledger-row__premise">Government by reflection, not representation.</span>
-          <div class="ledger-row__tags">
-            <button class="ledger-row__tag" data-tag="Governance">Governance</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-row__tag" data-tag="Identity">Identity</button>
-          </div>
-        </a>
-
-      </div><!-- /stories-col -->
-
-      <!-- VIGNETTES COLUMN -->
-      <div class="ledger__col" id="vignettes-col">
-        <div class="ledger__head">
-          <h2 id="vignettes">Vignettes <span class="slash">/</span></h2>
-          <div class="t-label" id="vignettes-count">10 entries</div>
-        </div>
-
-        <a class="ledger-vrow enter" data-tags="Identity,Memory" href="#">
-          <div class="ledger-vrow__num">0010</div>
-          <div class="ledger-vrow__title">The Last Name We Kept</div>
-          <span class="ledger-vrow__arr">→</span>
-          <div class="ledger-vrow__tags">
-            <button class="ledger-vrow__tag" data-tag="Identity">Identity</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-vrow__tag" data-tag="Memory">Memory</button>
-          </div>
-        </a>
-
-        <a class="ledger-vrow enter" data-tags="Technology,Memory" href="#">
-          <div class="ledger-vrow__num">0009</div>
-          <div class="ledger-vrow__title">Legacy Mode</div>
-          <span class="ledger-vrow__arr">→</span>
-          <div class="ledger-vrow__tags">
-            <button class="ledger-vrow__tag" data-tag="Technology">Technology</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-vrow__tag" data-tag="Memory">Memory</button>
-          </div>
-        </a>
-
-        <a class="ledger-vrow enter" data-tags="Work" href="#">
-          <div class="ledger-vrow__num">0008</div>
-          <div class="ledger-vrow__title">A Day Without Metrics</div>
-          <span class="ledger-vrow__arr">→</span>
-          <div class="ledger-vrow__tags">
-            <button class="ledger-vrow__tag" data-tag="Work">Work</button>
-          </div>
-        </a>
-
-        <a class="ledger-vrow enter" data-tags="Governance" href="#">
-          <div class="ledger-vrow__num">0007</div>
-          <div class="ledger-vrow__title">The Local Treaty</div>
-          <span class="ledger-vrow__arr">→</span>
-          <div class="ledger-vrow__tags">
-            <button class="ledger-vrow__tag" data-tag="Governance">Governance</button>
-          </div>
-        </a>
-
-        <a class="ledger-vrow enter" data-tags="Climate,Governance" href="#">
-          <div class="ledger-vrow__num">0006</div>
-          <div class="ledger-vrow__title">Prime Meridian Drift</div>
-          <span class="ledger-vrow__arr">→</span>
-          <div class="ledger-vrow__tags">
-            <button class="ledger-vrow__tag" data-tag="Climate">Climate</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-vrow__tag" data-tag="Governance">Governance</button>
-          </div>
-        </a>
-
-        <a class="ledger-vrow enter" data-tags="Culture" href="#">
-          <div class="ledger-vrow__num">0005</div>
-          <div class="ledger-vrow__title">Songs for the In-Between</div>
-          <span class="ledger-vrow__arr">→</span>
-          <div class="ledger-vrow__tags">
-            <button class="ledger-vrow__tag" data-tag="Culture">Culture</button>
-          </div>
-        </a>
-
-        <a class="ledger-vrow enter" data-tags="Memory,Climate" href="#">
-          <div class="ledger-vrow__num">0004</div>
-          <div class="ledger-vrow__title">What the Lake Remembered</div>
-          <span class="ledger-vrow__arr">→</span>
-          <div class="ledger-vrow__tags">
-            <button class="ledger-vrow__tag" data-tag="Memory">Memory</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-vrow__tag" data-tag="Climate">Climate</button>
-          </div>
-        </a>
-
-        <a class="ledger-vrow enter" data-tags="Biotech,Culture" href="#">
-          <div class="ledger-vrow__num">0003</div>
-          <div class="ledger-vrow__title">Sourdough, Inheritance</div>
-          <span class="ledger-vrow__arr">→</span>
-          <div class="ledger-vrow__tags">
-            <button class="ledger-vrow__tag" data-tag="Biotech">Biotech</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-vrow__tag" data-tag="Culture">Culture</button>
-          </div>
-        </a>
-
-        <a class="ledger-vrow enter" data-tags="Energy,Work" href="#">
-          <div class="ledger-vrow__num">0002</div>
-          <div class="ledger-vrow__title">Two A.M., the Substation</div>
-          <span class="ledger-vrow__arr">→</span>
-          <div class="ledger-vrow__tags">
-            <button class="ledger-vrow__tag" data-tag="Energy">Energy</button>
-            <span class="ledger-row__tag-sep">·</span>
-            <button class="ledger-vrow__tag" data-tag="Work">Work</button>
-          </div>
-        </a>
-
-        <a class="ledger-vrow enter" data-tags="Space" href="#">
-          <div class="ledger-vrow__num">0001</div>
-          <div class="ledger-vrow__title">Postcards from Low Orbit</div>
-          <span class="ledger-vrow__arr">→</span>
-          <div class="ledger-vrow__tags">
-            <button class="ledger-vrow__tag" data-tag="Space">Space</button>
-          </div>
-        </a>
-
-      </div><!-- /vignettes-col -->
-
-    </div><!-- /ledger -->
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div>Alternate Tomorrows · 2025–<span id="yr"></span></div>
-    <div class="footer-links">
-      <a href="#">RSS</a>
-      <a href="about.html">About</a>
-    </div>
-  </footer>
-
-</div><!-- /shell -->
-
-<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
-<script src="js/main.js"></script>
+  <script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
