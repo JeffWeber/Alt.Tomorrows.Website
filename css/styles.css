@@ -592,7 +592,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 .ledger-vrow {
   display: grid;
-  grid-template-columns: 48px 1fr auto;
+  grid-template-columns: 48px 1fr auto auto;
   column-gap: 20px;
   row-gap: 6px;
   padding: 18px 0;
@@ -615,11 +615,24 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   text-wrap: balance;
 }
 .ledger-vrow:hover .ledger-vrow__title { color: var(--accent); }
+.ledger-vrow__date {
+  color: var(--ink-mute);
+  font-size: var(--fs-meta);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  grid-row: 1;
+  grid-column: 3;
+}
 .ledger-vrow__arr {
   color: var(--ink-faint);
   transition: transform 280ms var(--ease), color 200ms;
   align-self: center;
   font-size: 14px;
+  grid-row: 1;
+  grid-column: 4;
 }
 .ledger-vrow:hover .ledger-vrow__arr {
   color: var(--accent);
@@ -658,6 +671,14 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     row-gap: 4px;
   }
   .ledger-row__date {
+    grid-row: auto;
+    grid-column: 2 / -1;
+    text-align: left;
+    color: var(--ink-faint);
+    margin-top: 6px;
+    font-size: 10px;
+  }
+  .ledger-vrow__date {
     grid-row: auto;
     grid-column: 2 / -1;
     text-align: left;

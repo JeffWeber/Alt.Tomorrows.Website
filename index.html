@@ -54,8 +54,12 @@
           <button data-tag="AI" aria-pressed="false"><span class="pill-dot"></span>AI</button>
           <button data-tag="Dystopian" aria-pressed="false"><span class="pill-dot"></span>Dystopian</button>
           <button data-tag="Human Augmentation" aria-pressed="false"><span class="pill-dot"></span>Human Augmentation</button>
+          <button data-tag="Isolation" aria-pressed="false"><span class="pill-dot"></span>Isolation</button>
           <button data-tag="Longevity" aria-pressed="false"><span class="pill-dot"></span>Longevity</button>
           <button data-tag="Neurotechnology" aria-pressed="false"><span class="pill-dot"></span>Neurotechnology</button>
+          <button data-tag="Space Exploration" aria-pressed="false"><span class="pill-dot"></span>Space Exploration</button>
+          <button data-tag="Space Industry" aria-pressed="false"><span class="pill-dot"></span>Space Industry</button>
+          <button data-tag="Survival" aria-pressed="false"><span class="pill-dot"></span>Survival</button>
         </div>
         <div class="filterbar__count" id="filter-count">31 ENTRIES</div>
       </div>
@@ -96,110 +100,28 @@
         <div class="ledger__col" id="vignettes-col">
           <div class="ledger__head">
             <h2 id="vignettes">Vignettes <span class="slash">/</span></h2>
-            <div class="t-label" id="vignettes-count">10 entries</div>
+            <div class="t-label" id="vignettes-count">01 entries</div>
           </div>
 
-          <a class="ledger-vrow enter" data-tags="Identity,Memory" href="#">
-            <div class="ledger-vrow__num">0010</div>
-            <div class="ledger-vrow__title">The Last Name We Kept</div>
-            <span class="ledger-vrow__arr">→</span>
-            <div class="ledger-vrow__tags">
-              <button class="ledger-vrow__tag" data-tag="Identity">Identity</button>
-              <span class="ledger-row__tag-sep">·</span>
-              <button class="ledger-vrow__tag" data-tag="Memory">Memory</button>
-            </div>
-          </a>
-
-          <a class="ledger-vrow enter" data-tags="Technology,Memory" href="#">
-            <div class="ledger-vrow__num">0009</div>
-            <div class="ledger-vrow__title">Legacy Mode</div>
-            <span class="ledger-vrow__arr">→</span>
-            <div class="ledger-vrow__tags">
-              <button class="ledger-vrow__tag" data-tag="Technology">Technology</button>
-              <span class="ledger-row__tag-sep">·</span>
-              <button class="ledger-vrow__tag" data-tag="Memory">Memory</button>
-            </div>
-          </a>
-
-          <a class="ledger-vrow enter" data-tags="Work" href="#">
-            <div class="ledger-vrow__num">0008</div>
-            <div class="ledger-vrow__title">A Day Without Metrics</div>
-            <span class="ledger-vrow__arr">→</span>
-            <div class="ledger-vrow__tags">
-              <button class="ledger-vrow__tag" data-tag="Work">Work</button>
-            </div>
-          </a>
-
-          <a class="ledger-vrow enter" data-tags="Governance" href="#">
-            <div class="ledger-vrow__num">0007</div>
-            <div class="ledger-vrow__title">The Local Treaty</div>
-            <span class="ledger-vrow__arr">→</span>
-            <div class="ledger-vrow__tags">
-              <button class="ledger-vrow__tag" data-tag="Governance">Governance</button>
-            </div>
-          </a>
-
-          <a class="ledger-vrow enter" data-tags="Climate,Governance" href="#">
-            <div class="ledger-vrow__num">0006</div>
-            <div class="ledger-vrow__title">Prime Meridian Drift</div>
-            <span class="ledger-vrow__arr">→</span>
-            <div class="ledger-vrow__tags">
-              <button class="ledger-vrow__tag" data-tag="Climate">Climate</button>
-              <span class="ledger-row__tag-sep">·</span>
-              <button class="ledger-vrow__tag" data-tag="Governance">Governance</button>
-            </div>
-          </a>
-
-          <a class="ledger-vrow enter" data-tags="Culture" href="#">
-            <div class="ledger-vrow__num">0005</div>
-            <div class="ledger-vrow__title">Songs for the In-Between</div>
-            <span class="ledger-vrow__arr">→</span>
-            <div class="ledger-vrow__tags">
-              <button class="ledger-vrow__tag" data-tag="Culture">Culture</button>
-            </div>
-          </a>
-
-          <a class="ledger-vrow enter" data-tags="Memory,Climate" href="#">
-            <div class="ledger-vrow__num">0004</div>
-            <div class="ledger-vrow__title">What the Lake Remembered</div>
-            <span class="ledger-vrow__arr">→</span>
-            <div class="ledger-vrow__tags">
-              <button class="ledger-vrow__tag" data-tag="Memory">Memory</button>
-              <span class="ledger-row__tag-sep">·</span>
-              <button class="ledger-vrow__tag" data-tag="Climate">Climate</button>
-            </div>
-          </a>
-
-          <a class="ledger-vrow enter" data-tags="Biotech,Culture" href="#">
-            <div class="ledger-vrow__num">0003</div>
-            <div class="ledger-vrow__title">Sourdough, Inheritance</div>
-            <span class="ledger-vrow__arr">→</span>
-            <div class="ledger-vrow__tags">
-              <button class="ledger-vrow__tag" data-tag="Biotech">Biotech</button>
-              <span class="ledger-row__tag-sep">·</span>
-              <button class="ledger-vrow__tag" data-tag="Culture">Culture</button>
-            </div>
-          </a>
-
-          <a class="ledger-vrow enter" data-tags="Energy,Work" href="#">
-            <div class="ledger-vrow__num">0002</div>
-            <div class="ledger-vrow__title">Two A.M., the Substation</div>
-            <span class="ledger-vrow__arr">→</span>
-            <div class="ledger-vrow__tags">
-              <button class="ledger-vrow__tag" data-tag="Energy">Energy</button>
-              <span class="ledger-row__tag-sep">·</span>
-              <button class="ledger-vrow__tag" data-tag="Work">Work</button>
-            </div>
-          </a>
-
-          <a class="ledger-vrow enter" data-tags="Space" href="#">
+<!-- BEGIN:VIGNETTES-ROWS -->
+          <a class="ledger-vrow enter" data-tags="Space Exploration,Survival,Dystopian,Space Industry,Isolation" href="vignettes/0001-sixty-two-hours.html">
             <div class="ledger-vrow__num">0001</div>
-            <div class="ledger-vrow__title">Postcards from Low Orbit</div>
+            <div class="ledger-vrow__title">Sixty-Two Hours</div>
+            <div class="ledger-vrow__date">May 15</div>
             <span class="ledger-vrow__arr">→</span>
             <div class="ledger-vrow__tags">
-              <button class="ledger-vrow__tag" data-tag="Space">Space</button>
+              <button class="ledger-vrow__tag" data-tag="Space Exploration">Space Exploration</button>
+              <span class="ledger-row__tag-sep">·</span>
+              <button class="ledger-vrow__tag" data-tag="Survival">Survival</button>
+              <span class="ledger-row__tag-sep">·</span>
+              <button class="ledger-vrow__tag" data-tag="Dystopian">Dystopian</button>
+              <span class="ledger-row__tag-sep">·</span>
+              <button class="ledger-vrow__tag" data-tag="Space Industry">Space Industry</button>
+              <span class="ledger-row__tag-sep">·</span>
+              <button class="ledger-vrow__tag" data-tag="Isolation">Isolation</button>
             </div>
           </a>
+<!-- END:VIGNETTES-ROWS -->
 
         </div><!-- /vignettes-col -->
 
