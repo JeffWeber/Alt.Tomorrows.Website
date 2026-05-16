@@ -5,9 +5,9 @@
 
 const STORIES = [
   { no: "0001", title: "Below Threshold", premise: "In a future optimized for comfort, grief is a quiet form of rebellion.", date: "May 15, 2026", year: 2026, tags: ["Human Augmentation", "Neurotechnology", "Longevity"], file: "stories/0001-below-threshold.html" },
-  { no: "0002", title: "What Chose", premise: "A surgical implant that grows from your own cells and silences years of chronic pain. What could possibly go wrong?", date: "May 16, 2026", year: 2026, tags: ["Biotechnology", "Neurotechnology", "Human Augmentation", "Psychological Horror", "Cybernetics"], file: "stories/0002-what-chose.html" },
-  { no: "0003", title: "Sixteen Minutes", premise: "She filed three years of extensions to stay unaugmented. Today was the last one.", date: "May 16, 2026", year: 2026, tags: ["Neurotechnology", "Human Augmentation", "Biotechnology", "Transhumanism", "Dystopian"], file: "stories/0003-sixteen-minutes.html" },
-  { no: "0004", title: "No Field for It", premise: "The repair took eleven minutes. The view took the rest of her life.", date: "May 16, 2026", year: 2026, tags: ["Space Exploration", "Deep Space", "Isolation", "Void", "Interstellar Travel"], file: "stories/0004-no-field-for-it.html" }
+  { no: "0002", title: "What Chose", premise: "A surgical implant that grows from your own cells and silences years of chronic pain. What could possibly go wrong?", date: "May 16, 2026", year: 2026, tags: ["Biotechnology", "Neurotechnology", "Human Augmentation"], file: "stories/0002-what-chose.html" },
+  { no: "0003", title: "Sixteen Minutes", premise: "She filed three years of extensions to stay unaugmented. Today was the last one.", date: "May 16, 2026", year: 2026, tags: ["Neurotechnology", "Human Augmentation", "Biotechnology"], file: "stories/0003-sixteen-minutes.html" },
+  { no: "0004", title: "No Field for It", premise: "The repair took eleven minutes. The view took the rest of her life.", date: "May 16, 2026", year: 2026, tags: ["Space Exploration", "Deep Space", "Isolation"], file: "stories/0004-no-field-for-it.html" }
 ];
 
 const VIGNETTES = [
@@ -15,5 +15,5 @@ const VIGNETTES = [
 ];
 
 const TAGS = [
-  "All", "Biotechnology", "Cybernetics", "Deep Space", "Dystopian", "Human Augmentation", "Interstellar Travel", "Isolation", "Longevity", "Neurotechnology", "Psychological Horror", "Space Exploration", "Survival", "Transhumanism", "Void"
+  "All", "Biotechnology", "Deep Space", "Dystopian", "Human Augmentation", "Isolation", "Longevity", "Neurotechnology", "Space Exploration", "Survival"
 ];
