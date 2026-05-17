@@ -51,19 +51,16 @@
         <div class="filterbar__group" role="group" aria-label="Filter by tag">
           <button data-tag="All" aria-pressed="true"><span class="pill-dot"></span>All</button>
           <button data-tag="Biotechnology" aria-pressed="false"><span class="pill-dot"></span>Biotechnology</button>
-          <button data-tag="Brain-Computer Interface" aria-pressed="false"><span class="pill-dot"></span>Brain-Computer
-            Interface</button>
+          <button data-tag="Brain-Computer Interface" aria-pressed="false"><span class="pill-dot"></span>Brain-Computer Interface</button>
           <button data-tag="Deep Space" aria-pressed="false"><span class="pill-dot"></span>Deep Space</button>
           <button data-tag="Dystopian" aria-pressed="false"><span class="pill-dot"></span>Dystopian</button>
-          <button data-tag="Human Augmentation" aria-pressed="false"><span class="pill-dot"></span>Human
-            Augmentation</button>
+          <button data-tag="Human Augmentation" aria-pressed="false"><span class="pill-dot"></span>Human Augmentation</button>
           <button data-tag="Isolation" aria-pressed="false"><span class="pill-dot"></span>Isolation</button>
           <button data-tag="Longevity" aria-pressed="false"><span class="pill-dot"></span>Longevity</button>
           <button data-tag="Neurotechnology" aria-pressed="false"><span class="pill-dot"></span>Neurotechnology</button>
-          <button data-tag="Psychological Thriller" aria-pressed="false"><span class="pill-dot"></span>Psychological
-            Thriller</button>
-          <button data-tag="Space Exploration" aria-pressed="false"><span class="pill-dot"></span>Space
-            Exploration</button>
+          <button data-tag="Psychological Horror" aria-pressed="false"><span class="pill-dot"></span>Psychological Horror</button>
+          <button data-tag="Psychological Thriller" aria-pressed="false"><span class="pill-dot"></span>Psychological Thriller</button>
+          <button data-tag="Space Exploration" aria-pressed="false"><span class="pill-dot"></span>Space Exploration</button>
           <button data-tag="Survival" aria-pressed="false"><span class="pill-dot"></span>Survival</button>
         </div>
         <div class="filterbar__count" id="filter-count">31 ENTRIES</div>
@@ -76,73 +73,80 @@
         <div class="ledger__col" id="stories-col">
           <div class="ledger__head">
             <h2>Stories <span class="slash">/</span></h2>
-            <div class="t-label" id="stories-count">04 entries</div>
+            <div class="t-label" id="stories-count">05 entries</div>
           </div>
 
-          <!-- BEGIN:STORIES-ROWS -->
-          <a class="ledger-row enter" data-tags="Space Exploration,Deep Space,Isolation"
-            href="stories/0004-no-field-for-it.html">
+<!-- BEGIN:STORIES-ROWS -->
+          <a class="ledger-row enter" data-tags="Biotechnology,Psychological Horror,Isolation" href="stories/0005-noise-floor.html">
+            <div class="ledger-row__num">0005</div>
+            <div class="ledger-row__title">Noise Floor</div>
+            <div class="ledger-row__date">May 17</div>
+            <span class="ledger-row__premise">Something silenced every whale on Earth, and it's already in the food chain.</span>
+            <div class="ledger-row__tags">
+              <button class="ledger-row__tag" data-tag="Biotechnology">Biotechnology</button>
+              <span class="ledger-row__tag-sep">·</span>
+              <button class="ledger-row__tag" data-tag="Psychological Horror">Psychological Horror</button>
+              <span class="ledger-row__tag-sep">·</span>
+              <button class="ledger-row__tag" data-tag="Isolation">Isolation</button>
+            </div>
+          </a>
+
+          <a class="ledger-row enter" data-tags="Space Exploration,Deep Space,Isolation" href="stories/0004-no-field-for-it.html">
             <div class="ledger-row__num">0004</div>
             <div class="ledger-row__title">No Field for It</div>
             <div class="ledger-row__date">May 16</div>
             <span class="ledger-row__premise">The repair took eleven minutes. The view took the rest of her life.</span>
             <div class="ledger-row__tags">
               <button class="ledger-row__tag" data-tag="Space Exploration">Space Exploration</button>
-              <span class="ledger-row__tag-sep">Â·</span>
+              <span class="ledger-row__tag-sep">·</span>
               <button class="ledger-row__tag" data-tag="Deep Space">Deep Space</button>
-              <span class="ledger-row__tag-sep">Â·</span>
+              <span class="ledger-row__tag-sep">·</span>
               <button class="ledger-row__tag" data-tag="Isolation">Isolation</button>
             </div>
           </a>
 
-          <a class="ledger-row enter" data-tags="Neurotechnology,Human Augmentation,Biotechnology"
-            href="stories/0003-sixteen-minutes.html">
+          <a class="ledger-row enter" data-tags="Neurotechnology,Human Augmentation,Biotechnology" href="stories/0003-sixteen-minutes.html">
             <div class="ledger-row__num">0003</div>
             <div class="ledger-row__title">Sixteen Minutes</div>
             <div class="ledger-row__date">May 16</div>
-            <span class="ledger-row__premise">She filed three years of extensions to stay unaugmented. Today was the
-              last one.</span>
+            <span class="ledger-row__premise">She filed three years of extensions to stay unaugmented. Today was the last one.</span>
             <div class="ledger-row__tags">
               <button class="ledger-row__tag" data-tag="Neurotechnology">Neurotechnology</button>
-              <span class="ledger-row__tag-sep">Â·</span>
+              <span class="ledger-row__tag-sep">·</span>
               <button class="ledger-row__tag" data-tag="Human Augmentation">Human Augmentation</button>
-              <span class="ledger-row__tag-sep">Â·</span>
+              <span class="ledger-row__tag-sep">·</span>
               <button class="ledger-row__tag" data-tag="Biotechnology">Biotechnology</button>
             </div>
           </a>
 
-          <a class="ledger-row enter" data-tags="Biotechnology,Neurotechnology,Human Augmentation"
-            href="stories/0002-what-chose.html">
+          <a class="ledger-row enter" data-tags="Biotechnology,Neurotechnology,Human Augmentation" href="stories/0002-what-chose.html">
             <div class="ledger-row__num">0002</div>
             <div class="ledger-row__title">What Chose</div>
             <div class="ledger-row__date">May 16</div>
-            <span class="ledger-row__premise">A surgical implant that grows from your own cells and silences years of
-              chronic pain. What could possibly go wrong?</span>
+            <span class="ledger-row__premise">A surgical implant that grows from your own cells and silences years of chronic pain. What could possibly go wrong?</span>
             <div class="ledger-row__tags">
               <button class="ledger-row__tag" data-tag="Biotechnology">Biotechnology</button>
-              <span class="ledger-row__tag-sep">Â·</span>
+              <span class="ledger-row__tag-sep">·</span>
               <button class="ledger-row__tag" data-tag="Neurotechnology">Neurotechnology</button>
-              <span class="ledger-row__tag-sep">Â·</span>
+              <span class="ledger-row__tag-sep">·</span>
               <button class="ledger-row__tag" data-tag="Human Augmentation">Human Augmentation</button>
             </div>
           </a>
 
-          <a class="ledger-row enter" data-tags="Human Augmentation,Neurotechnology,Longevity"
-            href="stories/0001-below-threshold.html">
+          <a class="ledger-row enter" data-tags="Human Augmentation,Neurotechnology,Longevity" href="stories/0001-below-threshold.html">
             <div class="ledger-row__num">0001</div>
             <div class="ledger-row__title">Below Threshold</div>
             <div class="ledger-row__date">May 15</div>
-            <span class="ledger-row__premise">In a future optimized for comfort, grief is a quiet form of
-              rebellion.</span>
+            <span class="ledger-row__premise">In a future optimized for comfort, grief is a quiet form of rebellion.</span>
             <div class="ledger-row__tags">
               <button class="ledger-row__tag" data-tag="Human Augmentation">Human Augmentation</button>
-              <span class="ledger-row__tag-sep">Â·</span>
+              <span class="ledger-row__tag-sep">·</span>
               <button class="ledger-row__tag" data-tag="Neurotechnology">Neurotechnology</button>
-              <span class="ledger-row__tag-sep">Â·</span>
+              <span class="ledger-row__tag-sep">·</span>
               <button class="ledger-row__tag" data-tag="Longevity">Longevity</button>
             </div>
           </a>
-          <!-- END:STORIES-ROWS -->
+<!-- END:STORIES-ROWS -->
 
         </div><!-- /stories-col -->
 

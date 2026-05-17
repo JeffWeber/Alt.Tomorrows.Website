@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Noise Floor — Alternate Tomorrows</title>
+  <meta name="description" content="Something silenced every whale on Earth, and it's already in the food chain." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Oswald:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/story.css" />
+</head>
+<body>
+<div class="shell">
+
+  <header class="topbar">
+    <a class="logo" href="../index.html">
+      <span>Alternate</span>
+      <span>Tomorrows</span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html">Stories</a>
+      <a href="../index.html#vignettes">Vignettes</a>
+      <a href="../about.html">About</a>
+      <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">Light</button>
+    </nav>
+  </header>
+
+  <main>
+    <article class="story">
+
+      <div class="story__crumb">
+        <a href="../index.html"><span class="arrow"></span> Tomorrows</a>
+      </div>
+
+      <h1 class="story__title">Noise Floor</h1>
+      <p class="story__premise">Something silenced every whale on Earth, and it's already in the food chain.</p>
+
+      <div class="story__meta">
+        <span>May 17, 2026</span>
+        <span class="sep" aria-hidden="true"></span>
+        <span>11 min read</span>
+        <span class="sep" aria-hidden="true"></span>
+        <span class="tags">
+          <a href="../index.html">Biotechnology</a>
+          <span class="dot">·</span>
+          <a href="../index.html">Psychological Horror</a>
+          <span class="dot">·</span>
+          <a href="../index.html">Isolation</a>
+        </span>
+      </div>
+
+      <div class="story__body">
+
+        <p>The last blue whale call in my dataset was logged January 8th, 2034, at 04:17 UTC. Eighteen hertz, sustained for forty seconds, the same individual I'd been tracking for three years — I knew her by the flat harmonic at nineteen hertz that showed up in her second breath. After that, nothing. Not on the low-frequency band, not on the mid-range clicks, not on the contact calls the fin whales make when they're moving in groups along the shelf edge.</p>
+
+        <p>By February 3rd I had twenty-six consecutive days of flatline from the North Atlantic array. I'd grabbed lunch from the cafeteria before my shift, the same smoked mackerel sandwich I'd been getting most days since I arrived here four years ago. I didn't know why I was thinking about that.</p>
+
+        <p>I told myself it was equipment. We'd had icing events on the northern hydrophones in December, a software update in January that had briefly dropped two of the nineteen nodes offline. I ran the diagnostics three times. All nodes nominal. I cross-checked against the satellite telemetry tags on the two fin whales we'd fitted the previous spring. Both tags still pinging. Both whales alive. Both stationary, which was unusual, but animals go stationary for reasons — patches of food, anomalous temperature gradients, simple rest.</p>
+
+        <p>What they don't do is stop vocalizing for twenty-six days.</p>
+
+        <p>I filed a note in the incident log and called Lars in Bergen. He picked up on the second ring, which meant he was at his station and not at dinner.</p>
+
+        <p>"I was going to call you," he said.</p>
+
+        <p>His array covered the Norwegian Sea. He pulled up his acoustic log while I was still on the line and read out the numbers in that flat way he had, like he was reciting a train schedule. The Norwegian humpbacks had gone silent January 11th. The minkes, January 14th. He'd been checking with Reykjavik and Dublin; they were seeing the same thing. Every network in the NAPS grid had flagged anomalous low-frequency dropout sometime in the first two weeks of January. He mentioned his brother fished out of Tromsø. Said it almost as an aside — just noting that he'd been following the local fishing news more closely than usual, that the catches had been odd.</p>
+
+        <p>"Seismic?" I said.</p>
+
+        <p>"I thought that first. But the seismic is up, not down. There's a lot of new vent activity along the Mid-Atlantic Ridge. Started in October."</p>
+
+        <p>I looked at my seismic overlay. He was right. Hydrothermal activity spiking in clusters — the kind of thing that usually correlates with increased biological productivity, not decreased. Historically that kind of activity pulls animals in, not away.</p>
+
+        <p>"Something pushed them off," I said.</p>
+
+        <p>"Yes," he said. "Something did."</p>
+
+        <hr>
+
+        <p>I spent the next two weeks in the literature. This is what my job looks like for months at a time — reading papers on the acoustics of deep-ocean sound propagation, on whale cognition, on the specific neural circuits that govern vocalization in cetaceans. I was looking for anything that could explain a population-wide cessation of calls — no known acoustic deterrent, no environmental catastrophe.</p>
+
+        <p>What I found instead was a preprint from a team at Hokkaido University. They'd been sampling krill populations in the Pacific near the Mariana Back-Arc Basin, where new hydrothermal activity had been exposing previously buried sediment layers since 2032. In the krill pulled from the warmest zones, they'd identified a novel protein complex they were calling MPC-34. Not a virus. Not a bacterium. A misfolded protein shed by thermophilic archaea — structurally consistent with a prion-inducing peptide, though nothing like the strains anyone had catalogued. Deep-heat organisms locked in those sediment layers for potentially thousands of years, and now, with the vents opened, entering the water column.</p>
+
+        <p>The Hokkaido team wasn't alarmed. Their paper was about biogeochemical cycling, not toxicology. They noted MPC-34 as a flagged unusual compound, described its structure, moved on to their primary findings about sulfide gradients.</p>
+
+        <p>I read the protein structure description twice. Then I pulled up the literature on prion diseases, which I hadn't thought about since a graduate seminar in 2027.</p>
+
+        <p>The normal cellular prion protein — PrP, present in the neural tissue of every vertebrate — has a tendency, under certain conditions, to refold into a pathological conformation. Once that misfolded form appears, it acts as a template, converting normal PrP around it. Slowly. Over months or years. The damage accumulates in specific brain regions depending on the prion strain. In cattle it's the brainstem. In deer it's the cerebellum. In humans, different strains hit different areas — some affect memory, some affect coordination, some affect behavior.</p>
+
+        <p>MPC-34's structure, as described in the preprint, was similar enough to a class of prion-inducing peptides that the comparison wasn't a stretch. I wrote to the Hokkaido team and asked if they'd tested for prion-like propagation in mammalian tissue cultures.</p>
+
+        <p>They replied four days later. They hadn't. But they found the question interesting.</p>
+
+        <hr>
+
+        <p>The aphasia clusters had been in the news peripherally since November. I'd logged them and moved on — a fishing community in the Faroe Islands where eight adults had been hospitalized with sudden-onset expressive aphasia, later reclassified as a progressive neurological syndrome of unknown origin. Then a cluster in coastal Newfoundland. Then one in northern Norway. The WHO called it Syndrome X in early January, acknowledging they didn't know what it was, which was unusual. The working hypothesis was viral encephalitis. Several research teams were looking for a pathogen.</p>
+
+        <p>I started mapping the clusters against the NAPS acoustic dropout data.</p>
+
+        <p>The overlap wasn't perfect. It wasn't even close to perfect. But every cluster was coastal. Every affected population was heavily seafood-dependent. And the Norwegian cluster — the one Lars had mentioned once in passing, not as something connected to our work, just as local news — was thirty kilometers from his monitoring station.</p>
+
+        <p>Krill to whale is a short path. Whale to coastal human fishing stock is a longer path, but not an impossible one. Processed seafood from whale-range waters. Filter-feeding shellfish. Small pelagics — sardines, anchovies — that congregate near the same krill blooms.</p>
+
+        <p>I built a simple exposure model. I wasn't an epidemiologist and didn't pretend to be, but the math was just bioaccumulation: MPC-34 concentration in krill, multiplied by feeding rate of the species above it, multiplied by feeding rate of the species above that, carried forward. For whales — large brains, high marine protein intake, years of accumulation — the model predicted neurological onset eight to fourteen months after initial significant exposure.</p>
+
+        <p>The new vent activity had started in November 2032.</p>
+
+        <p>The whales went silent in January 2034.</p>
+
+        <p>Fourteen months.</p>
+
+        <p>I sat with that number for a while.</p>
+
+        <hr>
+
+        <p>Lars's last message came through on a Tuesday, at 22:14 his time. I'd sent him my exposure model and the draft of what I was calling a findings memo — not a paper, not yet, but a structured summary of everything I'd assembled, formatted for the NAPS technical committee. I'd asked him to look it over before I sent it up the chain.</p>
+
+        <p>His reply was: "Good work. I think this is right. Send it."</p>
+
+        <p>I almost moved on. I almost just filed it and sent the memo to my director.</p>
+
+        <p>Something made me read the message again. Lars wrote in long sentences. He had a specific habit of introducing qualifications — "though of course," "it is worth noting that" — that I'd been reading for four years. His reply was eleven words.</p>
+
+        <p>I called Bergen. His colleague Simon answered.</p>
+
+        <p>"Lars is unwell," Simon said. "He had to take medical leave. Is there something I can help with?"</p>
+
+        <p>I asked if it was the aphasia syndrome.</p>
+
+        <p>A pause. "That's a family matter. Is there something related to the station I can help with?"</p>
+
+        <p>I said no, and thanked him, and hung up.</p>
+
+        <hr>
+
+        <p>I almost didn't send the memo that night.</p>
+
+        <p>Not because I thought I was wrong. I was fairly sure I wasn't wrong. But "fairly sure" and a three-week self-assembled data trail is not the same as proof, and if I filed something this significant and the mechanism didn't hold up, it wouldn't just be my work under scrutiny. It would slow down whatever response was actually needed. That felt like the wrong kind of caution — the kind that looks careful from the outside but is really just fear of being wrong in public.</p>
+
+        <p>I sent it to Garrett at 23:40.</p>
+
+        <p>He called me the next morning, earlier than I expected, which meant he'd read it overnight.</p>
+
+        <p>"This is a significant claim," he said.</p>
+
+        <p>"I know."</p>
+
+        <p>"You're saying this is a prion cascade originating from a deep-vent protein, transmitted through the marine food chain, and now presenting in humans as progressive aphasia."</p>
+
+        <p>"I'm saying the data is consistent with that mechanism. I'm not saying I've proven it."</p>
+
+        <p>He was quiet for a moment. "Give me something concrete that isn't a model. A second data point."</p>
+
+        <p>"Lars Keel, Norwegian Sea Monitoring Station, Bergen. He's one of the most careful researchers I know. He's been on medical leave since Tuesday with what his colleague won't call by name. He lives forty kilometers from one of the affected communities. He's been working out of a coastal station for six years."</p>
+
+        <p>Garrett didn't say anything for a few seconds. "I'm going to send this to the Chief Science Officer and flag it for WHO coordination. This goes up the chain today."</p>
+
+        <p>"Good," I said.</p>
+
+        <p>"Celeste." He paused. "How long have you been at the coastal station?"</p>
+
+        <p>"Four years."</p>
+
+        <p>He didn't say anything after that.</p>
+
+        <hr>
+
+        <p>I know what he was asking. I'd been asking myself the same thing for three days.</p>
+
+        <p>The cafeteria at the station sources local. The coast here is forty kilometers from a major commercial fishing port. I eat lunch at the cafeteria most days. I've been eating smoked fish on crackers from the vending machine on night shifts since I can remember. Seafood five or six times a week, probably.</p>
+
+        <p>I ran my own numbers. I'd rather know than not know.</p>
+
+        <p>If the exposure started in late 2032, and if my intake is consistent with what I estimated for the coastal Norwegian community, and if MPC-34 behaves in humans the way it behaves in cetaceans — and that last if is a significant if, because human PrP expression differs from cetacean PrP expression in ways that could mean a longer incubation, or shorter, or no transmission at all — then I'm somewhere inside a window.</p>
+
+        <p>The window is wide. Years, potentially.</p>
+
+        <p>Or not. Nobody knows yet.</p>
+
+        <p>What I know is that I feel fine. I'm thinking clearly. I'm writing clearly, I believe, though I've been reading every sentence back to myself twice to check, which I didn't used to do. I know what each word means. I know what I'm trying to say.</p>
+
+        <p>That's what I keep checking.</p>
+
+        <hr>
+
+        <p>The memo is in the system now. Garrett confirmed WHO received it this morning. Epidemiologists are in the Faroe Islands and three other affected communities running new tissue tests, looking for MPC-34 specifically. The Hokkaido team responded to my second message with what read like genuine alarm; they're apparently expediting a follow-up study. The WHO has updated Syndrome X to a provisional foodborne etiology, which isn't an announcement so much as a placeholder, but it's something.</p>
+
+        <p>None of that is fast enough, probably. Studies take months to publish. Public health responses take longer. The communities eating from the same fishing stocks as the whales have been eating from them this whole time.</p>
+
+        <p>I went back on shift tonight. The array is running. The ocean is still quiet.</p>
+
+        <p>I've been adjusting the gain on the hydrophone system for the past hour, bringing up the sensitivity, looking for anything — anomalous clicks, echolocation fragments, the low-frequency hum of a large animal moving at depth. The North Atlantic is four and a half thousand meters deep in places. I've listened to it for four years. I know what it's supposed to sound like at 2 a.m. in February, the baseline of shrimp noise and distant shipping and the geological groan of the mid-ocean ridge settling.</p>
+
+        <p>The whales are part of that texture. They have been for as long as there have been hydrophones to hear them.</p>
+
+        <p>I wrote a note in the shift log just now. I was logging the continued absence of cetacean vocalization — the same entry I've been writing every shift for twenty-six days — and I noticed I'd written "silent" where I meant "silence." One is a condition, one is an absence, and they're not the same thing.</p>
+
+        <p>I stared at it for a moment.</p>
+
+        <p>Then I deleted the word and typed the correct one, and I read it back to myself twice to make sure.</p>
+
+      </div>
+
+      <div class="story__endmark">— ⌖ —</div>
+
+      <nav class="story__nav">
+        <a class="story__nav-cell prev" href="0004-no-field-for-it.html">
+          <span class="t-label"><span class="arrow">←</span> Older</span>
+          <span class="next-title">No Field for It</span>
+        </a>
+        <a class="story__nav-cell next empty" href="#"></a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div>Alternate Tomorrows · 2025–<span id="yr"></span></div>
+    <div class="footer-links">
+      <a href="#">RSS</a>
+      <a href="../about.html">About</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+<script src="../js/story.js"></script>
+</body>
+</html>
