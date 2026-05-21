@@ -8,7 +8,8 @@ const STORIES = [
   { no: "0002", title: "What Chose", premise: "A surgical implant that grows from your own cells and silences years of chronic pain. What could possibly go wrong?", date: "May 16, 2026", year: 2026, tags: ["Biotechnology", "Neurotechnology", "Human Augmentation"], file: "stories/0002-what-chose.html" },
   { no: "0003", title: "Sixteen Minutes", premise: "She filed three years of extensions to stay unaugmented. Today was the last one.", date: "May 16, 2026", year: 2026, tags: ["Neurotechnology", "Human Augmentation", "Biotechnology"], file: "stories/0003-sixteen-minutes.html" },
   { no: "0004", title: "No Field for It", premise: "The repair took eleven minutes. The view took the rest of her life.", date: "May 16, 2026", year: 2026, tags: ["Space Exploration", "Deep Space", "Isolation"], file: "stories/0004-no-field-for-it.html" },
-  { no: "0005", title: "Noise Floor", premise: "Something silenced every whale on Earth, and it's already in the food chain.", date: "May 17, 2026", year: 2026, tags: ["Biotechnology", "Psychological Horror", "Isolation"], file: "stories/0005-noise-floor.html" }
+  { no: "0005", title: "Noise Floor", premise: "Something silenced every whale on Earth, and it's already in the food chain.", date: "May 17, 2026", year: 2026, tags: ["Biotechnology", "Psychological Horror", "Isolation"], file: "stories/0005-noise-floor.html" },
+  { no: "0006", title: "Booth Nineteen", premise: "What happens when the house always wins, and the bet is your mind?", date: "May 21, 2026", year: 2026, tags: ["Neurotechnology", "Cyberpunk", "Dystopian"], file: "stories/0006-booth-nineteen.html" }
 ];
 
 const VIGNETTES = [
@@ -17,5 +18,5 @@ const VIGNETTES = [
 ];
 
 const TAGS = [
-  "All", "Biotechnology", "Brain-Computer Interface", "Deep Space", "Dystopian", "Human Augmentation", "Isolation", "Longevity", "Neurotechnology", "Psychological Horror", "Psychological Thriller", "Space Exploration", "Survival"
+  "All", "Biotechnology", "Brain-Computer Interface", "Cyberpunk", "Deep Space", "Dystopian", "Human Augmentation", "Isolation", "Longevity", "Neurotechnology", "Psychological Horror", "Psychological Thriller", "Space Exploration", "Survival"
 ];
